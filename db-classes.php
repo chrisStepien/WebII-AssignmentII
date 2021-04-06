@@ -59,4 +59,5 @@ class CompanyDB {
     return $statement->fetchAll();
   }
 
+
 }

@@ -9,10 +9,10 @@
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $gateway = new CompanyDB($conn);
     if ( isCorrectQueryStringInfo("symbol") )
-      $paintings = $gateway->getAllForSymbol($_GET["symbol"]);
+      $companies = $gateway->getAllForSymbol($_GET["symbol"]);
     else
-      $paintings = $gateway->getAll();
-    echo json_encode( $paintings, JSON_NUMERIC_CHECK+JSON_PRETTY_PRINT );
+      $companies = $gateway->getAll();
+    echo json_encode( $companies, JSON_NUMERIC_CHECK+JSON_PRETTY_PRINT );
   }
   catch (Exception $e) {
     die( $e->getMessage() );

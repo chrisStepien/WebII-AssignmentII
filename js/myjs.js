@@ -74,7 +74,7 @@ function populateListOfCompanies(companies) {
         list.innerHTML = "<img class='miniLogo' src='logos/"+c.symbol+".svg'>";
         list.appendChild(symbol);
         list.appendChild(name);
-        list.setAttribute("class", "companyListItem");
+        list.setAttribute("class", "companiesListItem");
         list.setAttribute("id", c.symbol);
         companyList.appendChild(list);
     }
