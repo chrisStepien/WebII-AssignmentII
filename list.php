@@ -27,8 +27,6 @@
     <button type="button" id="clear" class="filterButton">Clear</button><br/>
     <ul id="listOfCompanies"></ul>
 
-
-
     <script src="js/myjs.js"></script>
   </body>
 </html>

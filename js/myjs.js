@@ -64,21 +64,29 @@ function populateListOfCompanies(companies) {
 
         const symbol = document.createElement("div");
         symbol.setAttribute("class", "listSymbol");
-        symbol.innerHTML = "<a href='#'>" + c.symbol + "</a>";
+        symbol.innerHTML = "<a href='single-company.php?symbol=" + c.symbol + "'>" + c.symbol + "</a>";
 
         const name = document.createElement("div");
         name.setAttribute("class", "listName");
-        name.innerHTML = "<a href='#'>" + c.name + "</a>";
+        name.innerHTML = "<a href='single-company.php?symbol=" + c.symbol + "'>" + c.name + "</a>";
 
         const list = document.createElement("li");
-        list.innerHTML = "<img class='miniLogo' src='logos/"+c.symbol+".svg' width='20px' height='20px'>";
+        list.innerHTML = "<img class='miniLogo' src='logos/"+c.symbol+".svg'>";
         list.appendChild(symbol);
         list.appendChild(name);
+        list.setAttribute("class", "companyListItem");
         list.setAttribute("id", c.symbol);
         companyList.appendChild(list);
     }
 }
 
+document.querySelector("#filterCompany").addEventListener("keyup", function(e) {
+    textFilter();
+});
+
+document.querySelector("#clear").addEventListener("click", function(e) {
+    clearFilter();
+});
 
 
 }); //preload

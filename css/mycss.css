@@ -67,7 +67,7 @@ body{
 
 .miniLogo {
   display: inline-block;
-  width: 20px;
+  width: 40px;
   height: 20px;
   margin-left: 10px;
   margin-right: 25px;
@@ -83,6 +83,21 @@ body{
   /* width: 200px; */
 }
 
+.companyListItem {
+  margin-top: 5px;
+}
+
+ul#listOfCompanies {
+  height:370px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+ul#listOfCompanies li{
+    cursor: pointer;
+    font-size: 14px;
+}
 
 .container-1 div, .container-2 div, .container-3 div{
   border:1px #ccc solid;
