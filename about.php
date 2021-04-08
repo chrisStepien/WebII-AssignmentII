@@ -38,8 +38,8 @@
     <div class='content'>
       <span class='label'>Members: </span>
       <div>Jerik Ramos - <a class="gitrepo" href="https://github.com/jramo193">GitHub repo</a></div>
-      <div>Chris Stepien - <a class="gitrepo" href="https://github.com/jramo193">GitHub repo</a></div>
-      <div>Yuan Zhou - <a class="gitrepo" href="https://github.com/jramo193">GitHub repo</a></div>
+      <div>Chris Stepien - <a class="gitrepo" href="https://github.com/Cstep212">GitHub repo</a></div>
+      <div>Yuan Zhou - <a class="gitrepo" href="https://github.com/yuantzhou">GitHub repo</a></div>
     </div>
   </section>
   </body>
