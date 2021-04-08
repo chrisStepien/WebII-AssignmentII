@@ -22,40 +22,41 @@ $cdb = new CompanyDB($conn);
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50">Stockify</label>
+      <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Companies</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a class="active" href="list.php">Companies</a></li>
       </ul>
     </nav>
 
-    <h2>COMPANY</h2>
-    <ul id="companyInfo">
-      <?php
-      foreach ($cdb->getAllForSymbol($_GET['symbol']) as $row) {
-        echo "<li class='companyItem'>";
-        echo "<img src='logos/" . $row['symbol'] . ".svg'>";
-        echo "</br>";
-        echo $row['symbol'];
-        echo "</br>";
-        echo $row['name'];
-        echo "</br>";
-        echo "Sector: " . $row['sector'];
-        echo "</br>";
-        echo "Subindustry: " . $row['subindustry'];
-        echo "</br>";
-        echo "Address: " . $row['address'];
-        echo "</br>";
-        echo "Exchange: " . $row['exchange'];
-        echo "</br>";
-        echo $row['website'];
-        echo "</br>";
-        echo "Description: " . $row['description'];
-        echo "</li>";
-      }
+    <h1>COMPANY</h1>
+    <section class="mainSection">
+      <ul id="companyInfo">
+        <?php
+        foreach ($cdb->getAllForSymbol($_GET['symbol']) as $row) {
+          echo "<li class='companyListItem'>";
+          echo "<div><img src='logos/" . $row['symbol'] . ".svg' id='companyLogo'></div>";
+          echo "<div id='companySymbol'>" . $row['symbol'] . "</div>";
+          echo "<div id='companyName'>" . $row['name'] . "</div>";
+          echo "<div class='content'><a id='companyWebsite' href='" . $row['website'] . "'>" . $row['website'] . "</a></div>";
+          echo "</br>";
+          echo "<div class='content'><span class='label'>Sector: </span>" . $row['sector'] . "</div>";
+          echo "<div class='content'><span class='label'>Subindustry: </span>" . $row['subindustry'] . "</div>";
+          echo "<div class='content'><span class='label'>Address: </span>" . $row['address'] . "</div>";
+          echo "<div class='content'><span class='label'>Exchange: </span>" . $row['exchange'] . "</div>";
+          echo "</br>";
+          echo "<div class='content'><span class='label'>Description: </span>" . $row['description'] . "</div>";
+          echo "</li>";
+          echo "</br>";
+          echo "<button type='button' id='addToFavouritesButton'>Add to Favourites</button>";
+          echo "<button type='button' id='stockHistoryButton' onclick=";
+          echo "\"location.href='history.php?symbol=". $row['symbol'] . "';\">Stock History</button>";
 
-      ?>
-    </ul>
+        }
+
+        ?>
+      </ul>
+    </section>
   </body>
 </html>

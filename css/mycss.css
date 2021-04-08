@@ -6,8 +6,22 @@
   box-sizing: border-box;
 }
 
-body{
-  font-family: montserrat;
+body {
+  font-family: Helvetica;
+  background-image: url(images/background.PNG);
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+}
+
+.mainSection {
+  margin: 12px 12px 0px 12px;
 }
 
 .container-1{
@@ -28,13 +42,13 @@ body{
   width: 200px;
   margin: 10px;
   border: 3px solid #333;
-  background-color: #dfdfdf;
+  background-color: transparent;
   text-align: center;
 }
 
 .box-1 {
     flex: 1 0 0;
-    min-height: 100px;
+    min-height: 50px;
     flex-shrink: 0;
     align-self: flex-end;
     order: 3;
@@ -43,7 +57,7 @@ body{
 
 .box-2 {
     flex: 1 0 0;
-    min-height: 100px;
+    min-height: 50px;
     flex-shrink: 0;
     align-self: flex-end;
     order: 3;
@@ -51,7 +65,7 @@ body{
 
 .box-3 {
     flex: 1 0 0;
-    min-height: 100px;
+    min-height: 50px;
     flex-shrink: 0;
     align-self: flex-end;
     order: 3;
@@ -59,10 +73,11 @@ body{
 
 .box-4 {
     flex: 1 0 0;
-    min-height: 100px;
+    min-height: 50px;
     flex-shrink: 0;
     align-self: flex-end;
     order: 3;
+
 }
 
 .miniLogo {
@@ -71,16 +86,19 @@ body{
   height: 20px;
   margin-left: 10px;
   margin-right: 25px;
+  background-color: white;
 }
 
 .listSymbol {
   display: inline-block;
   width: 60px;
+  text-decoration: underline;
 }
 
 .listName {
   display: inline-block;
   /* width: 200px; */
+  text-decoration: underline;
 }
 
 .companiesListItem {
@@ -97,6 +115,7 @@ ul#listOfCompanies {
 ul#listOfCompanies li{
     cursor: pointer;
     font-size: 14px;
+    color: white;
 }
 
 .container-1 div, .container-2 div, .container-3 div{
@@ -108,6 +127,8 @@ nav{
   background: #0082e6;
   height: 80px;
   width: 100%;
+  position: relative;
+  z-index: 99;
 }
 
 label.logo{
@@ -156,12 +177,111 @@ a.active,a:hover{
   display: none;
 }
 
-#stockifylogo{
+#stockifylogo {
   position: absolute;
-  left: 2%;
-  top: 4%;
+  left: 5%;
+  top: 25%;
   width: 40px;
   height: 40px;
+}
+
+#stockDataTableHeader {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#stockDataDiv {
+    max-height:375px;
+    overflow:auto;
+    overflow-y: scroll;
+}
+
+#stockDataTableRow {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    font-size: 9px;
+    table-layout: fixed;
+    text-align: center;
+}
+
+.stockHeader {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+td {
+    text-align: center;
+    font-size: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+    color: black;
+}
+
+#stockHistoryButton{
+  position: absolute;
+  left: 32%;
+}
+
+#addToFavouritesButton{
+  position: absolute;
+  left: 3%;
+}
+
+#companyWebsite {
+  text-decoration: underline;
+}
+
+#companySymbol {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#companyName {
+  font-size: 15px;
+}
+
+#companyLogo {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  z-index: 9;
+  background-color: white;
+  display: inline-block;
+  left: 66%;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.content {
+  font-size: 12px;
+}
+
+#comingsoon {
+
+  width: 380px;
+  height:250px;
+}
+
+#filterCompany {
+  margin-bottom: 8px;
+}
+
+a {
+  color: white;
+}
+
+.gitrepo {
+    text-decoration: underline;
 }
 
 @media (max-width: 952px){
@@ -204,8 +324,41 @@ a.active,a:hover{
   }
 }
 
-section{
-  background: url(bg1.jpg) no-repeat;
-  background-size: cover;
-  height: calc(100vh - 80px);
+
+/* CSS Loader source: https://loading.io/css/ */
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #cdd422;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #c2dde6 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

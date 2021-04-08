@@ -12,16 +12,19 @@
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50">Stockify</label>
+      <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Companies</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="list.php">Companies</a></li>
       </ul>
     </nav>
 
     <h2>FAVOURITES</h2>
+    <section class="mainSection">
 
+
+    </section>
 
   </body>
 </html>

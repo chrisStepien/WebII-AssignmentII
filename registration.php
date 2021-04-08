@@ -1,3 +1,5 @@
+<!-- http://clipart-library.com/clip-art/coming-soon-transparent-17.htm -->
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -12,16 +14,17 @@
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50">Stockify</label>
+      <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Companies</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="list.php">Companies</a></li>
       </ul>
     </nav>
 
-    <h2>SIGN UP</h2>
-
-
+    <h1>SIGN UP</h1>
+    <section class="mainSection">
+        <img id="comingsoon" src="images/comingsoon.png" alt="comingsoon">
+    </section>
   </body>
 </html>

@@ -26,7 +26,7 @@ function textFilter() {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-const data1 = '/api-companies.php';
+const data1 = 'api-companies.php';
 let storedCompanies = retrieveStorageCompanies();
 
 //if content is not found in local storage, make a copy
@@ -60,6 +60,7 @@ function populateListOfCompanies(companies) {
     const companyList = document.querySelector("#listOfCompanies")
     for(let c of companies) {
         const img = document.createElement("img");
+        img.setAttribute("class", "companyListLogo")
         img.setAttribute("src", "logos/"+c.symbol+".svg");
 
         const symbol = document.createElement("div");
@@ -76,6 +77,7 @@ function populateListOfCompanies(companies) {
         list.appendChild(name);
         list.setAttribute("class", "companiesListItem");
         list.setAttribute("id", c.symbol);
+
         companyList.appendChild(list);
     }
 }
@@ -87,6 +89,7 @@ document.querySelector("#filterCompany").addEventListener("keyup", function(e) {
 document.querySelector("#clear").addEventListener("click", function(e) {
     clearFilter();
 });
+
 
 
 }); //preload

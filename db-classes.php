@@ -61,3 +61,31 @@ class CompanyDB {
 
 
 }
+
+class HistoryDB {
+  private static $baseSQL = "SELECT id, symbol, date, volume, open, close, high, low
+  FROM history";
+
+  public function __construct($connection) {
+    $this->pdo = $connection;
+  }
+
+  public function getAll() {
+    $sql = self::$baseSQL;
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, null);
+    return $statement->fetchAll();
+  }
+
+  public function getAllForSymbol($symbol) {
+    $sql = self::$baseSQL . " WHERE symbol=?";
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+    return $statement->fetchAll();
+  }
+
+  public function getAllForSymbolSort($symbol, $orderBy, $order) {
+    $sql = self::$baseSQL . " WHERE symbol=? ORDER BY " . $orderBy . " " . $order;
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+    return $statement->fetchAll();
+  }
+
+}

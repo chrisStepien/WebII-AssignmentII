@@ -12,21 +12,22 @@
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50">Stockify</label>
+      <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Companies</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a class="active" href="list.php">Companies</a></li>
       </ul>
     </nav>
 
-    <h2>COMPANIES</h2>
+    <h1>COMPANIES</h1>
+    <section class="mainSection">
+      <label>Filter:</label>
+      <input type="text" id="filterCompany" placeholder="Filter out companies...">
+      <button type="button" id="clear" class="filterButton">Clear</button><br/>
+      <ul id="listOfCompanies"></ul>
 
-    <label>Filter:</label>
-    <input type="text" id="filterCompany" placeholder="Filter out companies...">
-    <button type="button" id="clear" class="filterButton">Clear</button><br/>
-    <ul id="listOfCompanies"></ul>
-
-    <script src="js/myjs.js"></script>
+      <script src="js/list.js"></script>
+    </section>
   </body>
 </html>
