@@ -22,6 +22,19 @@
 
     <h1>LOG IN</h1>
     <section class="mainSection">
+      <div id="loginParentDiv">
+      <div>
+        <!-- <label id="labelEmail">Email: </label> -->
+        <input type="text" class="loginInfo" id="loginEmail" placeholder="Email address">
+      </div>
+      <div>
+        <!-- <label id="labelPassword">Password: </label> -->
+        <input type="text" class="loginInfo" id="loginPassword" placeholder="Password">
+      </div>
+
+      <button type="button" id="login">Login</button><br/><br/>
+      No account? <a href='registration.php' id='linkSignUp'>Click here to sign up</a><br/>
+      </div>
 
     </section>
 

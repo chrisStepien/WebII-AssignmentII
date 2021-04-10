@@ -24,23 +24,20 @@
 
     <h1>STOCKIFY</h1>
     <section class="mainSection">
-        <div class="container-1">
-          <div class="box box-1">
-            <h3><a href="about.php">About</a></h3>
-          </div>
-          <div class="box box-2">
-            <h3><a href="list.php">Companies</a></h3>
-          </div>
-        </div>
-
-        <div class="container-2">
-          <div class="box box-3">
-            <h3><a href="login.php">Log In</a></h3>
-          </div>
-          <div class="box box-4">
-            <h3><a href="registration.php">Sign Up</a></h3>
-          </div>
-        </div>
+      <div id="homeButtonsParentDiv">
+        <form action="about.php">
+          <input type="submit" class="homeButtons" id="homeAbout" value="About" />
+        </form>
+        <form action="list.php">
+          <input type="submit" class="homeButtons" id="homeCompanies" value="Companies" />
+        </form>
+        <form action="login.php">
+          <input type="submit" class="homeButtons" id="homeLogin" value="Login" />
+        </form>
+        <form action="registration.php">
+          <input type="submit" class="homeButtons" id="homeSignUp" value="Sign Up" />
+        </form>
+      </div>
     </section>
   </body>
 </html>
