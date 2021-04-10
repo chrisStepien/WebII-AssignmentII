@@ -63,11 +63,6 @@ ul#listOfCompanies li{
     color: white;
 }
 
-.container-1 div, .container-2 div, .container-3 div{
-  border:1px #ccc solid;
-  padding:10px;
-}
-
 nav{
   background: #0082e6;
   height: 80px;
@@ -252,7 +247,7 @@ a {
 }
 
 #login {
-  background-color: #4CAF50;
+  background-color: #34c7ff;
   width: 250px;
   height: 30px;
   transition-duration: 0.2s;
@@ -282,7 +277,7 @@ a {
 }
 
 .homeButtons {
-  background-color: #4CAF50;
+  background-color: #34c7ff;
   width: 180px;
   height: 50px;
   transition-duration: 0.2s;
