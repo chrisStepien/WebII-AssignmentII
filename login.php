@@ -29,7 +29,7 @@
       </div>
       <div>
         <!-- <label id="labelPassword">Password: </label> -->
-        <input type="text" class="loginInfo" id="loginPassword" placeholder="Password">
+        <input type="password" class="loginInfo" id="loginPassword" placeholder="Password">
       </div>
 
       <button type="button" id="login">Login</button><br/><br/>
