@@ -13,7 +13,7 @@ $cdb = new CompanyDB($conn);
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="./css/mycss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
@@ -36,7 +36,7 @@ $cdb = new CompanyDB($conn);
         <?php
         foreach ($cdb->getAllForSymbol($_GET['symbol']) as $row) {
           echo "<li class='companyListItem'>";
-          echo "<div><img src='logos/" . $row['symbol'] . ".svg' id='companyLogo'></div>";
+          echo "<div><img src='./logos/" . $row['symbol'] . ".svg' id='companyLogo'></div>";
           echo "<div id='companySymbol'>" . $row['symbol'] . "</div>";
           echo "<div id='companyName'>" . $row['name'] . "</div>";
           echo "<div class='content'><a id='companyWebsite' href='" . $row['website'] . "'>" . $row['website'] . "</a></div>";

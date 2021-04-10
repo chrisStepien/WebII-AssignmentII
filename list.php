@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="./css/mycss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
@@ -27,7 +27,7 @@
       <button type="button" id="clear" class="filterButton">Clear</button><br/>
       <ul id="listOfCompanies"></ul>
 
-      <script src="js/list.js"></script>
+      <script src="./js/list.js"></script>
     </section>
   </body>
 </html>

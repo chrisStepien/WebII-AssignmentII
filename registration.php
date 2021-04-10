@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="./css/mycss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body>
@@ -24,7 +24,7 @@
 
     <h1>SIGN UP</h1>
     <section class="mainSection">
-        <img id="comingsoon" src="images/comingsoon.png" alt="comingsoon">
+        <img id="comingsoon" src="./images/comingsoon.png" alt="comingsoon">
     </section>
   </body>
 </html>
