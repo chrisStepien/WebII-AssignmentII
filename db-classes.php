@@ -89,3 +89,42 @@ class HistoryDB {
   }
 
 }
+
+
+class UserDB {
+  private static $baseSQL = "SELECT id, firstname, lastname, city, country, email, password, salt, password_sha256
+  FROM users";
+
+  public function __construct($connection) {
+    $this->pdo = $connection;
+  }
+
+  public function getAll() {
+    $sql = self::$baseSQL;
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array());
+    return $statement->fetchAll();
+  }
+
+  public function getAllForEmail($email) {
+    $sql = self::$baseSQL . " WHERE email=?";
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($email));
+    return $statement->fetchAll();
+  }
+
+}
+
+class PortfolioDB {
+  private static $baseSQL = "SELECT id, userId, symbol, amount
+  FROM portfolio";
+
+  public function __construct($connection) {
+    $this->pdo = $connection;
+  }
+
+  public function getAll() {
+    $sql = self::$baseSQL;
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, null);
+    return $statement->fetchAll();
+  }
+
+}

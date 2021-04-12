@@ -1,5 +1,10 @@
 <!-- https://www.codingnepalweb.com/2020/04/responsive-menu-bar-in-html-css.html -->
 <!-- https://www.goldencoreex.com/images/xz_bg.png -->
+
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
