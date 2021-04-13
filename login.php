@@ -19,7 +19,7 @@ try {
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
   $gateway = new UsersDB($conn);
-  $results = $gateway->findById($_GET['email']);
+  $results = $gateway->getAllForEmail($_GET['email']);
 
   while(count($results) > 0){
 
