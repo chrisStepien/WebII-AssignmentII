@@ -79,8 +79,8 @@ require_once "db-classes.php";
         
             if(password_verify($pass, $row['password'])){
                 
-                echo "<h1> hello3 </h1>";
-                
+               $_SESSION['loggedin-user'] = $email;
+                header('Location: index.php');
             }
     
     
