@@ -1,3 +1,40 @@
+<?php
+// Initialize session
+session_start();
+
+
+require_once "config.php";
+require_once "db-classes.php";
+
+$gate = new UsersDB($connection);
+
+
+
+if (isset($_GET['email'])) {
+   if (! empty($_GET['email']))
+      $results = $gate->findById($_GET['email']);  
+   else
+      $results = NULL;
+}
+else {      
+       
+   $results = $gate->getAll();
+
+}
+
+// output the JSON for the retrieved data
+
+if (is_null($results))
+    echo getJsonErrorMessage();
+else
+    echo json_encode($results);
+
+$connection =  null;
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -27,6 +64,13 @@
         <!-- <label id="labelEmail">Email: </label> -->
         <input type="text" class="loginInfo" id="loginEmail" placeholder="Email address">
       </div>
+           <?php
+       foreach($results as $value){
+        echo $value;
+
+
+       }
+      ?>
       <div>
         <!-- <label id="labelPassword">Password: </label> -->
         <input type="password" class="loginInfo" id="loginPassword" placeholder="Password">
@@ -40,3 +84,11 @@
 
   </body>
 </html>
+
+<?php 
+
+
+
+
+
+?>
