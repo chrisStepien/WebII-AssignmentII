@@ -54,8 +54,8 @@ session_start();
               echo "<form action=portfolio.php>
                     <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
                     </form>";
-              echo "<form action=favourites.php>
-                    <input type=submit class=homeButtons id=homeFavourites value=Favourites />
+              echo "<form action=favorites.php>
+                    <input type=submit class=homeButtons id=homeFavorites value=Favorites />
                     </form>";
               echo "<form action=profile.php>
                     <input type=submit class=homeButtons id=homeProfile value=Profile />
@@ -63,21 +63,15 @@ session_start();
               echo "<form action=index.php>
                     <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
                     </form>";
-              
-              if (isset($_POST['logout'])){
+          }
+          
+          if (isset($_POST['logout'])){
             
               session_unset();
               
               session_destroy();
-                  
-                echo $_SESSION['user-id'];  
               
             }
-         
-          
-          }
-          
-          
           ?>
         
       </div>
