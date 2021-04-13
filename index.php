@@ -65,7 +65,7 @@ session_start();
           }
           if (isset($_POST['logout'])){
             
-              session_unset();
+              $_SESSION = array();
               
               session_destroy();
               
