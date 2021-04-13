@@ -37,6 +37,16 @@ session_start();
         </form>
             <?php 
           
+          
+          if (isset($_POST['logout'])){
+            
+              session_unset();
+              
+              session_destroy();
+              
+            }
+          
+          
           if($_SESSION['loggedin-status'] == false){
                 
               echo "<form action=login.php>
@@ -65,13 +75,7 @@ session_start();
                     </form>";
           }
           
-          if (isset($_POST['logout'])){
-            
-              session_unset();
-              
-              session_destroy();
-              
-            }
+          
           ?>
         
       </div>
