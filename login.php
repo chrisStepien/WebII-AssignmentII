@@ -2,6 +2,7 @@
 // Initialize session
 session_start();
 
+$connection = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
 $gate = new UsersDB($connection);
 
 if ( !isset($_POST['submit'])){
