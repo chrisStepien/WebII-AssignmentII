@@ -9,8 +9,6 @@ if (isset($_POST['submit'] )){
   $pass = $_POST['password'];
 }
 
-
-
 require_once "config.php";
 require_once "db-classes.php";
 
@@ -18,15 +16,8 @@ try {
 
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
-  $gateway = new UsersDB($conn);
+  $gateway = new UserDB($conn);
   $results = $gateway->getAllForEmail($_GET['email']);
-
-  while(count($results) > 0){
-
-    echo $result[1];
-
-
-  }
 
 
   } catch (Exception $e) { die( $e->getMessage() ); 
