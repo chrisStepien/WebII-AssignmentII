@@ -63,11 +63,14 @@ session_start();
               echo "<form action=index.php>
                     <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
                     </form>";
+              
               if (isset($_POST['logout'])){
             
               session_unset();
               
               session_destroy();
+                  
+                echo $_SESSION['user-id'];  
               
             }
          
