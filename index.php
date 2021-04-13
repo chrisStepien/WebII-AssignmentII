@@ -39,18 +39,40 @@ session_start();
           
           if($_SESSION['loggedin-status'] == true){
               
-              echo "<form action=index.php>
-                    <input type=submit class=homeButtons id=homeLogin value=Logout />
+              echo "<form action=portfolio.php>
+                    <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
                     </form>";
+              echo "<form action=favourites.php>
+                    <input type=submit class=homeButtons id=homeFavourites value=Favourites />
+                    </form>";
+              echo "<form action=profile.php>
+                    <input type=submit class=homeButtons id=homeProfile value=Profile />
+                    </form>";
+              echo "<form action=index.php>
+                    <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
+                    </form>";
+              
+          }else{
+              
+              
+                echo "<form action=login.php>
+                    <input type=submit class=homeButtons id=homeLogin value=Login />
+                    </form>";
+                echo "<form action=registration.php>
+                    <input type=submit class=homeButtons id=homeSignUp value=Sign Up />
+                    </form>";
+              
+          }
+          if (isset($_POST['logout'])){
+            
+              session_unset();
+              
+              session_destroy();
+              
           }
           
           ?>
-        <form action="login.php">
-          <input type="submit" class="homeButtons" id="homeLogin" value="Login" />
-        </form>
-        <form action="registration.php">
-          <input type="submit" class="homeButtons" id="homeSignUp" value="Sign Up" />
-        </form>
+        
       </div>
     </section>
   </body>
