@@ -48,7 +48,7 @@ session_start();
               echo "<form action=profile.php>
                     <input type=submit class=homeButtons id=homeProfile value=Profile />
                     </form>";
-              echo "<form action=index.php>
+              echo "<form>
                     <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
                     </form>";
               
@@ -59,7 +59,7 @@ session_start();
                     <input type=submit class=homeButtons id=homeLogin value=Login />
                     </form>";
                 echo "<form action=registration.php>
-                    <input type=submit class=homeButtons id=homeSignUp value=Sign Up />
+                    <input type=submit class=homeButtons id=homeSignUp value=SignUp />
                     </form>";
               
           }
@@ -69,6 +69,7 @@ session_start();
               
               session_destroy();
               
+              header("Location: index.php");
           }
           
           ?>
