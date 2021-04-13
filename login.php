@@ -6,6 +6,11 @@ session_start();
 require_once "config.php";
 require_once "db-classes.php";
 
+// Tell the browser to expect JSON rather than HTML
+header('Content-type: application/json');
+// indicate whether other domains can use this API
+header("Access-Control-Allow-Origin: *");
+
 
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
@@ -44,8 +49,6 @@ require_once "db-classes.php";
       <div>
         <!-- <label id="labelEmail">Email: </label> -->
         <input type="text" class="loginInfo" name="email" id="loginEmail" placeholder="Email address">
-          
-         
       </div>
       <div>
         <!-- <label id="labelPassword">Password: </label> -->
@@ -72,6 +75,7 @@ require_once "db-classes.php";
            
             foreach($gateway->getAllForEmail($_GET['email']) as $row){
                echo "<h1> hello1 </h1>";
+                echo json_encode($row, JSON_NUMERIC_CHECK);
                if($row['email'] === $email){
                    echo "<h1> hello2 </h1>";
                   if(password_verify($pass, $row['password'])){
