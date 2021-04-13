@@ -47,30 +47,48 @@ session_start();
             }
           
           
-          if(! isset($_SESSION['loggedin-status'])){
-                
-              echo "<form action=login.php>
+          if($_SESSION['loggedin-status'] == true){
+              echo "<form action=login.php style=display:none>
                     <input type=submit class=homeButtons id=homeLogin value=Login />
                     </form>";
-                echo "<form action=registration.php>
+              echo "<form action=registration.php style=display:none>
                     <input type=submit class=homeButtons id=homeSignUp value=SignUp />
                     </form>";
+              echo "<form action=portfolio.php style=display:block>
+                    <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
+                    </form>";
+              echo "<form action=favorites.php style=display:block>
+                    <input type=submit class=homeButtons id=homeFavorites value=Favorites />
+                    </form>";
+              echo "<form action=profile.php style=display:block>
+                    <input type=submit class=homeButtons id=homeProfile value=Profile />
+                    </form>";
+              echo "<form action=index.php style=display:block>
+                    <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
+                    </form>";
+                
               
           }
           
           
-          if(isset($_SESSION['loggedin-status'])){
+          if($_SESSION['loggedin-status'] != true){
               
-              echo "<form action=portfolio.php>
+              echo "<form action=login.php style=display:block>
+                    <input type=submit class=homeButtons id=homeLogin value=Login />
+                    </form>";
+              echo "<form action=registration.php style=display:block>
+                    <input type=submit class=homeButtons id=homeSignUp value=SignUp />
+                    </form>";
+              echo "<form action=portfolio.php style=display:none>
                     <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
                     </form>";
-              echo "<form action=favorites.php>
+              echo "<form action=favorites.php style=display:none>
                     <input type=submit class=homeButtons id=homeFavorites value=Favorites />
                     </form>";
-              echo "<form action=profile.php>
+              echo "<form action=profile.php style=display:none>
                     <input type=submit class=homeButtons id=homeProfile value=Profile />
                     </form>";
-              echo "<form action=index.php>
+              echo "<form action=index.php style=display:none>
                     <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
                     </form>";
           }
