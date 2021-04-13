@@ -51,6 +51,11 @@ session_start();
               echo "<form>
                     <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
                     </form>";
+              foreach($_SESSION as $key =>$val){
+                  
+                  echo $key . " " . $val . "<br/>1";
+                  
+              }
               
           }else{
               
@@ -61,11 +66,16 @@ session_start();
                 echo "<form action=registration.php>
                     <input type=submit class=homeButtons id=homeSignUp value=SignUp />
                     </form>";
+               foreach($_SESSION as $key =>$val){
+                  
+                  echo $key . " " . $val . "<br/>2";
+                  
+              }
               
           }
           if (isset($_POST['logout'])){
             
-              $_SESSION = array();
+              session_unset();
               
               session_destroy();
               
