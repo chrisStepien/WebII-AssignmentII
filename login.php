@@ -3,25 +3,14 @@
 session_start();
 
 
-
-
-
 require_once "config.php";
 require_once "db-classes.php";
 
-try {
 
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
   $gateway = new UserDB($conn);
   $results = $gateway->getAllForEmail($_GET['email']);
-
- 
-
-
-
-  } catch (Exception $e) { die( $e->getMessage() ); 
-  }
 
   if (isset($_POST['submit'] )){
   $email = $_POST['email'];
@@ -35,7 +24,8 @@ try {
    }
   }
 }
- ?>
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
