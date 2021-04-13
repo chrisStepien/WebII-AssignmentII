@@ -63,16 +63,16 @@ require_once "db-classes.php";
 </html>
  <?php 
             
-    if(!isset($_SESSION['email'])){
-        
-        
-    }else{
+        echo "<h1> hello1 </h1>";
 
-        if (isset($_POST['login'] )){
+        if (isset($_POST['login'])){
+            echo "<h1> hello2 </h1>";
             $email = $_POST['email'];
             $pass = $_POST['password'];
+            echo "<h1> hello2 </h1>";
             echo $email;
             echo $pass;
+            echo "<h1> hello3 </h1>";
             foreach($gateway->getAllForEmail($_GET['email']) as $row){
                
                if($row['email'] === $email){
@@ -90,5 +90,5 @@ require_once "db-classes.php";
             }
           
         }
-    }
+    
     ?>
