@@ -2,21 +2,28 @@
 // Initialize session
 session_start();
 
+$email = "";
+$pass = "";
 
 if (!isset($_POST['submit'] )){
   $email = $_POST['email'];
   $pass = $_POST['password'];
 }
- 
+
+
+
 require_once "config.php";
 require_once "db-classes.php";
 
 try {
 
-$conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
-DBUSER, DBPASS));
-$gateway = new UsersDB($conn);
-} catch (Exception $e) { die( $e->getMessage() ); }
+  $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
+  DBUSER, DBPASS));
+  $gateway = new UsersDB($conn);
+  
+  } catch (Exception $e) { die( $e->getMessage() ); 
+  }
+  
 
 ?>
 
