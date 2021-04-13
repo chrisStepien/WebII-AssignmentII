@@ -83,7 +83,7 @@ require_once "db-classes.php";
                   }
                 }else{
                    
-                   die("Error: Email or password is invalid.")
+                   die("Error: Email or password is invalid.");
                    
                }
             }
