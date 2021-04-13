@@ -74,7 +74,15 @@ $sql = "select * from users";
 $result = $pdo->query($sql);
 // loop through the data
 while ($row = $result->fetch()) {
-echo $row['email'] . " - " . $row['password'] . "<br/>";
+
+    if($row['email'] == $email){
+        
+    echo "<h1> hello2 </h1>";
+    
+    
+    
+    }
+    
 }
 $pdo = null;
 }
@@ -86,8 +94,8 @@ die( $e->getMessage() );
             
             foreach($gateway->getAllForEmail($_GET['email']) as $row){
             
-               if($row['email'] === $email){
-                   echo "<h1> hello2 </h1>";
+              
+                  
                   if(password_verify($pass, $row['password'])){
                       echo "<h1> hello3 </h1>";
                       $_SESSION['loggedin-user'] = $email;
