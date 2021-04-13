@@ -4,10 +4,7 @@ session_start();
 
 
 
-if (isset($_POST['submit'] )){
-  $email = $_POST['email'];
-  $pass = $_POST['password'];
-}
+
 
 require_once "config.php";
 require_once "db-classes.php";
@@ -19,23 +16,26 @@ try {
   $gateway = new UserDB($conn);
   $results = $gateway->getAllForEmail($_GET['email']);
 
-  foreach($results as $row){
-
-   if($row['email'] == $email){
-
-    echo "hello";
-   }
-
-
-  }
+ 
 
 
 
   } catch (Exception $e) { die( $e->getMessage() ); 
   }
-  
 
-?>
+  if (isset($_POST['submit'] )){
+  $email = $_POST['email'];
+  $pass = $_POST['password'];
+
+   foreach($results as $row){
+
+   if($row['email'] == $email){
+
+    echo "hello";
+   }
+  }
+}
+ ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
