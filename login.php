@@ -63,22 +63,19 @@ require_once "db-classes.php";
 </html>
  <?php 
             
-        echo "<h1> hello1 </h1>";
+       
 
         if (isset($_POST['login'])){
-            echo "<h1> hello2 </h1>";
+            
             $email = $_POST['email'];
             $pass = $_POST['password'];
-            echo "<h1> hello2 </h1>";
-            echo $email;
-            echo $pass;
-            echo "<h1> hello3 </h1>";
+           
             foreach($gateway->getAllForEmail($_GET['email']) as $row){
-               
+               echo "<h1> hello1 </h1>";
                if($row['email'] === $email){
-
+                   echo "<h1> hello2 </h1>";
                   if(password_verify($pass, $row['password'])){
-                      
+                      echo "<h1> hello3 </h1>";
                       $_SESSION['loggedin-user'] = $email;
                       header('Location: index.php');
                   }
