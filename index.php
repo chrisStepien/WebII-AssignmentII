@@ -37,7 +37,16 @@ session_start();
         </form>
             <?php 
           
-          if(isset($_SESSION['loggedin-status'])){
+          if(!isset($_SESSION['loggedin-status'])){
+                
+              echo "<form action=login.php>
+                    <input type=submit class=homeButtons id=homeLogin value=Login />
+                    </form>";
+                echo "<form action=registration.php>
+                    <input type=submit class=homeButtons id=homeSignUp value=SignUp />
+                    </form>";
+              
+          }else{
               
               echo "<form action=portfolio.php>
                     <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
@@ -50,16 +59,6 @@ session_start();
                     </form>";
               echo "<form action=index.php>
                     <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
-                    </form>";
-              
-          }else{
-              
-              
-                echo "<form action=login.php>
-                    <input type=submit class=homeButtons id=homeLogin value=Login />
-                    </form>";
-                echo "<form action=registration.php>
-                    <input type=submit class=homeButtons id=homeSignUp value=SignUp />
                     </form>";
               
           }
