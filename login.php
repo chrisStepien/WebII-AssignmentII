@@ -21,7 +21,7 @@ try {
 
   foreach($results as $value){
 
-    echo $value;
+    echo $value['email'];
 
 
   }
