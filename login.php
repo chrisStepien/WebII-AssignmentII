@@ -1,22 +1,21 @@
 <?php
 // Initialize session
 session_start();
+require_once 'config.php';
+ require_once 'db-classes.php';
 
-$connection = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
+$connection = DatabaseHelper::createConnection(array(DBCONNSTRING,DBUSER,DBPASS));
 $gate = new UsersDB($connection);
 
 if ( !isset($_POST['submit'])){
   $email = $_POST['email'];
   $pass = $_POST['password'];
 
-  require_once "config.php";
-  require_once "db-classes.php";
-
   $results = $gate->findById($_GET['email']);
   echo $results;
+
+
 }
-
-
 
 ?>
 
