@@ -19,9 +19,12 @@ try {
   $gateway = new UserDB($conn);
   $results = $gateway->getAllForEmail($_GET['email']);
 
-  foreach($results as $value){
+  foreach($results as $row){
 
-    echo $value['email'];
+   if($row['email'] == $email){
+
+    echo "hello";
+   }
 
 
   }
