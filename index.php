@@ -37,7 +37,7 @@ session_start();
         </form>
             <?php 
           
-          if($_SESSION['loggedin-status'] == true){
+          if(isset($_SESSION['loggedin-status'])){
               
               echo "<form action=portfolio.php>
                     <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
@@ -59,7 +59,7 @@ session_start();
                     <input type=submit class=homeButtons id=homeLogin value=Login />
                     </form>";
                 echo "<form action=registration.php>
-                    <input type=submit class=homeButtons id=homeSignUp value=Sign Up />
+                    <input type=submit class=homeButtons id=homeSignUp value=SignUp />
                     </form>";
               
           }
