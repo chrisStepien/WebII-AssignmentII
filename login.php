@@ -37,7 +37,7 @@ require_once "db-classes.php";
           
           if($_SESSION['loggedin-status'] == true){
               
-              echo "<li><a href=index.php>Log Out</a></li>"
+              echo "<li><a href='index.php'>Log Out</a></li>";
           }
           
           ?>
