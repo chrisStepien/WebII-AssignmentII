@@ -18,7 +18,7 @@ try {
 
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
-  $gateway = new UsersDB($conn);
+  $gateway = new UserDB($conn);
   
   } catch (Exception $e) { die( $e->getMessage() ); 
   }
