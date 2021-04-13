@@ -71,7 +71,8 @@ require_once "db-classes.php";
         if (isset($_POST['login'] )){
             $email = $_POST['email'];
             $pass = $_POST['password'];
-          
+            echo $email;
+            echo $pass;
             foreach($gateway->getAllForEmail($_GET['email']) as $row){
                
                if($row['email'] === $email){
