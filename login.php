@@ -40,35 +40,19 @@ require_once "db-classes.php";
     <h1>LOG IN</h1>
     <section class="mainSection">
       <div id="loginParentDiv">
-      <form method="POST" action="#">
+      <form method="POST" action="">
       <div>
         <!-- <label id="labelEmail">Email: </label> -->
         <input type="text" class="loginInfo" name="email" id="loginEmail" placeholder="Email address">
           
-          <?php 
-            if (isset($_POST['submit'] )){
-            $email = $_POST['email'];
-            $pass = $_POST['password'];
-          
-            foreach($gateway->getAllForEmail($_GET['email']) as $row){
-               
-               echo $row['email']; 
-               
-               if($row['email'] === $email){
-
-                  echo "hello";
-                }
-            }
-          
-            }
-          ?>
+         
       </div>
       <div>
         <!-- <label id="labelPassword">Password: </label> -->
         <input type="password" class="loginInfo" name="password" id="loginPassword" placeholder="Password">
       </div>
       <div>
-      <button type="submit" id="login" value="submit" name="submit">Login</button><br/><br/>
+      <button type="submit" id="login" value="submit" name="login">Login</button><br/><br/>
       No account? <a href='registration.php' id='linkSignUp'>Click here to sign up</a><br/>
       </div>
       </form>
@@ -77,3 +61,33 @@ require_once "db-classes.php";
 
   </body>
 </html>
+ <?php 
+            
+    if(isset($_SESSION['email'])){
+        
+        
+    }else{
+
+        if (isset($_POST['login'] )){
+            $email = $_POST['email'];
+            $pass = $_POST['password'];
+          
+            foreach($gateway->getAllForEmail($_GET['email']) as $row){
+               
+               if($row['email'] === $email){
+
+                  if(password_verify($pass, $row['password'])){
+                      
+                      $_SESSION['email'] = $email;
+                      
+                  }
+                }else{
+                   
+                   die("Error: Email or password is invalid.")
+                   
+               }
+            }
+          
+        }
+    }
+    ?>
