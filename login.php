@@ -77,7 +77,11 @@ require_once "db-classes.php";
 
         if($row['email'] == $email){
         
-            echo "<h1> hello2 </h1>";
+            if(password_verify($pass, $row['password'])){
+                
+                echo "<h1> hello3 </h1>";
+                
+            }
     
     
     
