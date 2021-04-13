@@ -35,7 +35,16 @@ session_start();
         <form action="list.php">
           <input type="submit" class="homeButtons" id="homeCompanies" value="Companies" />
         </form>
-            <?php 
+            
+           <form action="login.php" style="display:block">
+                    <input type="submit" class="homeButtons" id="homeLogin" value="Login" />
+                    </form>
+              <form action="registration.php" style="display:block">
+                    <input type="submit" class="homeButtons" id="homeSignUp" value="SignUp" />
+                    </form>
+          
+          
+          <?php 
           
           
           if (isset($_POST['logout'])){
