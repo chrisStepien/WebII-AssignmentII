@@ -35,16 +35,7 @@ session_start();
         <form action="list.php">
           <input type="submit" class="homeButtons" id="homeCompanies" value="Companies" />
         </form>
-        <form action=login.php>
-                    <input type=submit class=homeButtons id=homeLogin value=Login />
-                    </form>
-        <form action=registration.php>
-                    <input type=submit class=homeButtons id=homeSignUp value=SignUp />
-                    </form>
-          
-          
-          
-          <?php 
+            <?php 
           
           if($_SESSION['loggedin-status'] == true){
               
@@ -60,30 +51,27 @@ session_start();
               echo "<form>
                     <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
                     </form>";
-              foreach($_SESSION as $key =>$val){
-                  
-                  echo $key . " " . $val . "<br/>1";
-                  
-              }
+              
+          }else{
               
               
-            if (isset($_POST['logout'])){
-            
-              session_unset();
-              
-              session_destroy();
-              
-              header("Location: index.php");
-                
                 echo "<form action=login.php>
                     <input type=submit class=homeButtons id=homeLogin value=Login />
                     </form>";
                 echo "<form action=registration.php>
                     <input type=submit class=homeButtons id=homeSignUp value=SignUp />
                     </form>";
+              
           }
-
+          if (isset($_POST['logout'])){
+            
+              $_SESSION = array();
+              
+              session_destroy();
+              
+              header("Location: index.php");
           }
+          
           ?>
         
       </div>
