@@ -16,8 +16,6 @@ try {
 $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
 DBUSER, DBPASS));
 $gateway = new UsersDB($conn);
-$userEmail = $gateway->getAllForEmail($email);
-echo json_encode( $userEmail, JSON_NUMERIC_CHECK );
 } catch (Exception $e) { die( $e->getMessage() ); }
 
 ?>
