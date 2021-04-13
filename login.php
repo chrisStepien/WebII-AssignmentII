@@ -89,6 +89,7 @@ require_once "db-classes.php";
                 
                $_SESSION['loggedin-status'] = true;
                $_SESSION['user-id'] = $row['id'];
+                echo $row['id'];
                 header('Location: index.php');
             }
     
