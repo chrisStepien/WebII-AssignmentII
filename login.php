@@ -6,12 +6,6 @@ session_start();
 require_once "config.php";
 require_once "db-classes.php";
 
-// Tell the browser to expect JSON rather than HTML
-header('Content-type: application/json');
-// indicate whether other domains can use this API
-header("Access-Control-Allow-Origin: *");
-
-
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
   $gateway = new UserDB($conn);
@@ -73,9 +67,25 @@ header("Access-Control-Allow-Origin: *");
             $email = $_POST['email'];
             $pass = $_POST['password'];
            
+            try {
+$pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "select * from users";
+$result = $pdo->query($sql);
+// loop through the data
+while ($row = $result->fetch()) {
+echo $row['email'] . " - " . $row['password'] . "<br/>";
+}
+$pdo = null;
+}
+catch (PDOException $e) {
+die( $e->getMessage() );
+}
+            
+            
+            
             foreach($gateway->getAllForEmail($_GET['email']) as $row){
-               echo "<h1> hello1 </h1>";
-                echo json_encode($row, JSON_NUMERIC_CHECK);
+            
                if($row['email'] === $email){
                    echo "<h1> hello2 </h1>";
                   if(password_verify($pass, $row['password'])){
