@@ -1,36 +1,20 @@
 <?php
-
 // Initialize session
 session_start();
 
 
-require_once "config.php";
-require_once "db-classes.php";
 
-$gate = new UsersDB($connection);
+if ( !isset($_POST['submit'])){
+  $email = $_POST['email'];
+  $pass = $_POST['password'];
 
+  require_once "config.php";
+  require_once "db-classes.php";
 
-
-if (isset($_GET['email'])) {
-   if (! empty($_GET['email']))
-      $results = $gate->findById($_GET['email']);  
-   else
-      $results = NULL;
-}
-else {      
-       
-   $results = $gate->getAll();
-
+  echo $email;
 }
 
-// output the JSON for the retrieved data
 
-if (is_null($results))
-    echo getJsonErrorMessage();
-else
-    echo json_encode($results);
-
-$connection =  null;
 
 ?>
 
@@ -59,33 +43,22 @@ $connection =  null;
     <h1>LOG IN</h1>
     <section class="mainSection">
       <div id="loginParentDiv">
+      <form method="POST" action="#">
       <div>
-        <input type="text" class="loginInfo" id="loginEmail" placeholder="Email address">
+        <!-- <label id="labelEmail">Email: </label> -->
+        <input type="text" class="loginInfo" name="email" id="loginEmail" placeholder="Email address">
       </div>
-           <?php
-       foreach($results as $value){
-        echo $value;
-
-
-       }
-      ?>
       <div>
-        <input type="password" class="loginInfo" id="loginPassword" placeholder="Password">
+        <!-- <label id="labelPassword">Password: </label> -->
+        <input type="password" class="loginInfo" name="password" id="loginPassword" placeholder="Password">
       </div>
-
-      <button type="button" id="login">Login</button><br/><br/>
+      <div>
+      <button type="submit" id="login" value="Submit">Login</button><br/><br/>
       No account? <a href='registration.php' id='linkSignUp'>Click here to sign up</a><br/>
       </div>
-
+      </form>
+        </div>
     </section>
 
   </body>
 </html>
-
-<?php 
-
-
-
-
-
-?>
