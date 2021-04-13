@@ -47,7 +47,7 @@ session_start();
             }
           
           
-          if($_SESSION['loggedin-status'] == false){
+          if(! isset($_SESSION['loggedin-status'])){
                 
               echo "<form action=login.php>
                     <input type=submit class=homeButtons id=homeLogin value=Login />
@@ -59,7 +59,7 @@ session_start();
           }
           
           
-          if($_SESSION['loggedin-status'] == true){
+          if(isset($_SESSION['loggedin-status'])){
               
               echo "<form action=portfolio.php>
                     <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
