@@ -64,7 +64,7 @@ require_once "db-classes.php";
  <?php 
             
     if(!isset($_SESSION['email'])){
-        header('Location: login.php');
+        
         
     }else{
 
