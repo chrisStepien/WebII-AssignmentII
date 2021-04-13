@@ -11,12 +11,7 @@ require_once "db-classes.php";
   DBUSER, DBPASS));
   $gateway = new UserDB($conn);
 
-  if (isset($_POST['submit'] )){
-  $email = $_POST['email'];
-  $pass = $_POST['password'];
-
-  
-}
+ 
 
 ?>
 
@@ -51,17 +46,21 @@ require_once "db-classes.php";
         <input type="text" class="loginInfo" name="email" id="loginEmail" placeholder="Email address">
           
           <?php 
-           foreach($gateway->getAllForEmail($_GET['email']) as $row){
+            if (isset($_POST['submit'] )){
+            $email = $_POST['email'];
+            $pass = $_POST['password'];
+          
+            foreach($gateway->getAllForEmail($_GET['email']) as $row){
                
-                echo "<p>" . $row['email'] . "</p>";
+               echo $row['email']; 
                
-                if($row['email'] == $email){
+               if($row['email'] === $email){
 
                   echo "hello";
                 }
             }
           
-          
+            }
           ?>
       </div>
       <div>
