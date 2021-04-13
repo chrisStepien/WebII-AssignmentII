@@ -1,10 +1,6 @@
 <!-- https://www.codingnepalweb.com/2020/04/responsive-menu-bar-in-html-css.html -->
 <!-- https://www.goldencoreex.com/images/xz_bg.png -->
 
-<?php
-  session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -36,6 +32,16 @@
         <form action="list.php">
           <input type="submit" class="homeButtons" id="homeCompanies" value="Companies" />
         </form>
+            <?php 
+          
+          if($_SESSION['loggedin-status'] == true){
+              
+              echo "<form action=index.php>
+                    <input type=submit class=homeButtons id=homeLogin value=Logout />
+                    </form>";
+          }
+          
+          ?>
         <form action="login.php">
           <input type="submit" class="homeButtons" id="homeLogin" value="Login" />
         </form>

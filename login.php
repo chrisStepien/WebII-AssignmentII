@@ -33,14 +33,6 @@ require_once "db-classes.php";
         <li><a href="index.php">Home</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="list.php">Companies</a></li>
-          <?php 
-          
-          if($_SESSION['loggedin-status'] == true){
-              
-              echo "<li><a href='index.php'>Log Out</a></li>";
-          }
-          
-          ?>
       </ul>
     </nav>
 
@@ -89,8 +81,7 @@ require_once "db-classes.php";
                 
                $_SESSION['loggedin-status'] = true;
                $_SESSION['user-id'] = $row['id'];
-                echo "id" . $row['id'];
-                //header('Location: index.php');
+                header('Location: index.php');
             }
     
     
