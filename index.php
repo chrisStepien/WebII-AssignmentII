@@ -37,7 +37,7 @@ session_start();
         </form>
             <?php 
           
-          if(!isset($_SESSION['loggedin-status'])){
+          if($_SESSION['loggedin-status'] == false){
                 
               echo "<form action=login.php>
                     <input type=submit class=homeButtons id=homeLogin value=Login />
@@ -46,7 +46,10 @@ session_start();
                     <input type=submit class=homeButtons id=homeSignUp value=SignUp />
                     </form>";
               
-          }else{
+          }
+          
+          
+          if($_SESSION['loggedin-status'] == true){
               
               echo "<form action=portfolio.php>
                     <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
@@ -60,15 +63,17 @@ session_start();
               echo "<form action=index.php>
                     <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
                     </form>";
-              
-          }
-          if (isset($_POST['logout'])){
+              if (isset($_POST['logout'])){
             
               session_unset();
               
               session_destroy();
               
+            }
+         
+          
           }
+          
           
           ?>
         
