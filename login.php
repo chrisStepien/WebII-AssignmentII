@@ -2,10 +2,9 @@
 // Initialize session
 session_start();
 
-$email = "";
-$pass = "";
 
-if (!isset($_POST['submit'] )){
+
+if (isset($_POST['submit'] )){
   $email = $_POST['email'];
   $pass = $_POST['password'];
 }
@@ -62,7 +61,7 @@ try {
         <input type="password" class="loginInfo" name="password" id="loginPassword" placeholder="Password">
       </div>
       <div>
-      <button type="submit" id="login" value="submit">Login</button><br/><br/>
+      <button type="submit" id="login" value="submit" name="submit">Login</button><br/><br/>
       No account? <a href='registration.php' id='linkSignUp'>Click here to sign up</a><br/>
       </div>
       </form>
