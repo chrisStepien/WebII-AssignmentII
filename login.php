@@ -10,7 +10,6 @@ require_once "db-classes.php";
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
   $gateway = new UserDB($conn);
-  $results = $gateway->getAllForEmail($_GET['email']);
 
   if (isset($_POST['submit'] )){
   $email = $_POST['email'];
@@ -52,11 +51,13 @@ require_once "db-classes.php";
         <input type="text" class="loginInfo" name="email" id="loginEmail" placeholder="Email address">
           
           <?php 
-           foreach($results as $row){
-
+           foreach($gateway->getAllForEmail($_GET['email']) as $row){
+               
+                echo $row['email'];
+               
                 if($row['email'] == $email){
 
-                ?>   <p>   <?php  echo "hello"; ?></p><?php
+                  echo "hello";
                 }
             }
           
