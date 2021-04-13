@@ -2,7 +2,7 @@
 // Initialize session
 session_start();
 
-
+$gate = new UsersDB($connection);
 
 if ( !isset($_POST['submit'])){
   $email = $_POST['email'];
@@ -11,7 +11,8 @@ if ( !isset($_POST['submit'])){
   require_once "config.php";
   require_once "db-classes.php";
 
-  echo $email;
+  $results = $gate->findById($_GET['email']);
+  echo $results;
 }
 
 
