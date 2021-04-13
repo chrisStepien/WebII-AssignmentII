@@ -1,26 +1,16 @@
 <?php
 // Initialize session
 session_start();
-require_once 'config.php';
-require_once 'db-classes.php';
-try{
-$connection = DatabaseHelper::createConnection(array(DBCONNSTRING,DBUSER,DBPASS));
+
 $gate = new UsersDB($connection);
-}
-catch(Exception $e){
-die( $e->getMessage());
-}
-if ( !isset($_POST['submit'])){
+
+if (!isset($_POST['submit'] )){
   $email = $_POST['email'];
   $pass = $_POST['password'];
-
- 
-
-  $results = $gate->findById($_GET['email']);
-  echo $results;
-
-
 }
+ 
+require_once "config.php";
+require_once "db-classes.php";
 
 ?>
 
@@ -59,7 +49,7 @@ if ( !isset($_POST['submit'])){
         <input type="password" class="loginInfo" name="password" id="loginPassword" placeholder="Password">
       </div>
       <div>
-      <button type="submit" id="login" value="Submit">Login</button><br/><br/>
+      <button type="submit" id="login" value="submit">Login</button><br/><br/>
       No account? <a href='registration.php' id='linkSignUp'>Click here to sign up</a><br/>
       </div>
       </form>
