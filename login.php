@@ -1,4 +1,5 @@
 <?php
+
 // Initialize session
 session_start();
 
@@ -31,8 +32,6 @@ else
 
 $connection =  null;
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +60,6 @@ $connection =  null;
     <section class="mainSection">
       <div id="loginParentDiv">
       <div>
-        <!-- <label id="labelEmail">Email: </label> -->
         <input type="text" class="loginInfo" id="loginEmail" placeholder="Email address">
       </div>
            <?php
@@ -72,7 +70,6 @@ $connection =  null;
        }
       ?>
       <div>
-        <!-- <label id="labelPassword">Password: </label> -->
         <input type="password" class="loginInfo" id="loginPassword" placeholder="Password">
       </div>
 

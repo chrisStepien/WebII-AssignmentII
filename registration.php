@@ -1,5 +1,9 @@
 <!-- http://clipart-library.com/clip-art/coming-soon-transparent-17.htm -->
 
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
