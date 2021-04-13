@@ -53,7 +53,7 @@ require_once "db-classes.php";
           <?php 
            foreach($gateway->getAllForEmail($_GET['email']) as $row){
                
-                echo $row['email'];
+                echo "<p>" . $row['email'] . "</p>";
                
                 if($row['email'] == $email){
 
