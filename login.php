@@ -19,6 +19,14 @@ try {
   $gateway = new UserDB($conn);
   $results = $gateway->getAllForEmail($_GET['email']);
 
+  foreach($results as $value){
+
+    echo $value;
+
+
+  }
+
+
 
   } catch (Exception $e) { die( $e->getMessage() ); 
   }
