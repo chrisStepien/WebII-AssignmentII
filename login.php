@@ -16,13 +16,7 @@ require_once "db-classes.php";
   $email = $_POST['email'];
   $pass = $_POST['password'];
 
-   foreach($results as $row){
-
-   if($row['email'] == $email){
-
-    echo "hello";
-   }
-  }
+  
 }
 
 ?>
@@ -56,6 +50,18 @@ require_once "db-classes.php";
       <div>
         <!-- <label id="labelEmail">Email: </label> -->
         <input type="text" class="loginInfo" name="email" id="loginEmail" placeholder="Email address">
+          
+          <?php 
+           foreach($results as $row){
+
+                if($row['email'] == $email){
+
+                ?>   <p>   <?php  echo "hello"; ?></p><?php
+                }
+            }
+          
+          
+          ?>
       </div>
       <div>
         <!-- <label id="labelPassword">Password: </label> -->
