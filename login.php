@@ -18,8 +18,17 @@ try {
 
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
-  $gateway = new UserDB($conn);
-  
+  $gateway = new UsersDB($conn);
+  $results = $gateway->findById($_GET['email']);
+
+  while(count($results) > 0){
+
+    echo $result[1];
+
+
+  }
+
+
   } catch (Exception $e) { die( $e->getMessage() ); 
   }
   
