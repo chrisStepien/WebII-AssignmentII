@@ -33,6 +33,14 @@ require_once "db-classes.php";
         <li><a href="index.php">Home</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="list.php">Companies</a></li>
+          <?php 
+          
+          if($_SESSION['loggedin-status'] == true){
+              
+              echo "<li><a href=index.php>Log Out</a></li>"
+          }
+          
+          ?>
       </ul>
     </nav>
 
@@ -79,7 +87,8 @@ require_once "db-classes.php";
         
             if(password_verify($pass, $row['password'])){
                 
-               $_SESSION['loggedin-user'] = $email;
+               $_SESSION['loggedin-status'] = true;
+               $_SESSION['user-id'] = $row['id'];
                 header('Location: index.php');
             }
     
@@ -90,27 +99,13 @@ require_once "db-classes.php";
                 }
                 $pdo = null;
             }
-catch (PDOException $e) {
-die( $e->getMessage() );
+                catch (PDOException $e) {
+                    die( $e->getMessage() );
 }
             
         }
             
-           // foreach($gateway->getAllForEmail($_GET['email']) as $row){
-            
-              
-                  
-                  //if(password_verify($pass, $row['password'])){
-                     //echo "<h1> hello3 </h1>";
-                      //$_SESSION['loggedin-user'] = $email;
-                      //header('Location: index.php');
-                 // }
-              // }else{
-                   
-                   //die("Error: Email or password is invalid.");
-                   
-               //}
-            //}
+        
           
         
     
