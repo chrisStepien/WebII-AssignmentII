@@ -68,45 +68,45 @@ require_once "db-classes.php";
             $pass = $_POST['password'];
            
             try {
-$pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = "select * from users";
-$result = $pdo->query($sql);
-// loop through the data
-while ($row = $result->fetch()) {
+                $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "select * from users";
+                $result = $pdo->query($sql);
+                // loop through the data
+                while ($row = $result->fetch()) {
 
-    if($row['email'] == $email){
+        if($row['email'] == $email){
         
-    echo "<h1> hello2 </h1>";
+            echo "<h1> hello2 </h1>";
     
     
     
-    }
+        }
     
-}
-$pdo = null;
-}
+                }
+                $pdo = null;
+            }
 catch (PDOException $e) {
 die( $e->getMessage() );
 }
             
+        }
             
-            
-            foreach($gateway->getAllForEmail($_GET['email']) as $row){
+           // foreach($gateway->getAllForEmail($_GET['email']) as $row){
             
               
                   
-                  if(password_verify($pass, $row['password'])){
-                      echo "<h1> hello3 </h1>";
-                      $_SESSION['loggedin-user'] = $email;
-                      header('Location: index.php');
-                  }
-                }else{
+                  //if(password_verify($pass, $row['password'])){
+                     //echo "<h1> hello3 </h1>";
+                      //$_SESSION['loggedin-user'] = $email;
+                      //header('Location: index.php');
+                 // }
+              // }else{
                    
-                   die("Error: Email or password is invalid.");
+                   //die("Error: Email or password is invalid.");
                    
-               }
-            }
+               //}
+            //}
           
         
     
