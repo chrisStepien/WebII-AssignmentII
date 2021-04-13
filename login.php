@@ -63,8 +63,8 @@ require_once "db-classes.php";
 </html>
  <?php 
             
-    if(isset($_SESSION['email'])){
-        
+    if(!isset($_SESSION['email'])){
+        header('Location: login.php');
         
     }else{
 
@@ -78,8 +78,8 @@ require_once "db-classes.php";
 
                   if(password_verify($pass, $row['password'])){
                       
-                      $_SESSION['email'] = $email;
-                      
+                      $_SESSION['loggedin-user'] = $email;
+                      header('Location: index.php');
                   }
                 }else{
                    
