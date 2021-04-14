@@ -287,6 +287,11 @@ a {
   width: 250px;
 }
 
+#errMessage{
+    
+    color:red;
+}
+
 .homeButtons {
   background-color: #34c7ff;
   width: 180px;
