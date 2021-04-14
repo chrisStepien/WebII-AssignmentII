@@ -61,7 +61,7 @@ $cdb = new CompanyDB($conn);
     </ul>
   </nav>
 
-  <h1>FAVOURITES</h1>
+  <h1>FAVORITES</h1>
   <section class="mainSection">
 
     <?php
