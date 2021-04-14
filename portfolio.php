@@ -94,7 +94,7 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
             echo "<td >" . $row['symbol'] . "</td>";
             echo "<td >" . $row['name'] . "</td>";
             echo "<td >" . $row['amount'] . "</td>";
-            $x = number_format($highest[0]['close'], 2, '.', '');
+            $x = number_format($highest[0]['close'], 2, '.', ',');
             echo "<td >" . $x . "</td>";
             $value = $row['amount'] * $highest[0]['close'];
             echo "<td >" . number_format($value) . "</td>";
@@ -112,7 +112,7 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
       $pdo = null;
       
       echo "</table>";
-      echo  "<div>Total Portfolio Value: " . number_format($portfolioValue, 2, '.', ',') . "</div>";
+      echo  "<div text-align='right'>Total Portfolio Value: " . number_format($portfolioValue, 2, '.', ',') . "</div>";
       ?>
   </section>
 </body>
