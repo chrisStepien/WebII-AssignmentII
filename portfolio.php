@@ -98,8 +98,6 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
             echo "<td >" . $x . "</td>";
             $value = $row['amount'] * $highest[0]['close'];
             echo "<td >" . number_format($value) . "</td>";
-            echo "<td ></td>";
-            echo "<td ></td>";
             echo "</tr>";
             
 
