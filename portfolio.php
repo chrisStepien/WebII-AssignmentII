@@ -112,7 +112,7 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
       $pdo = null;
       
       echo "</table>";
-      echo  "<div>Total Portfolio Value: " . number_format($portfolioValue, 2, '.', '') . "</div>";
+      echo  "<div>Total Portfolio Value: " . number_format($portfolioValue, 2, '.', ',') . "</div>";
       ?>
   </section>
 </body>
