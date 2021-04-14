@@ -74,8 +74,8 @@ $cdb = new CompanyDB($conn);
           $index=0;
           echo "<li class='companyListItem'>";
           echo "<div><img src='./logos/" . $row['symbol'] . ".svg' id='favouritesCompanyLogo'></div>";
-          echo "<div id='favouritesCompanySymbol'>" . $row['symbol'] . "</div>";
-          echo "<div id='favouritesCompanyName'>" . $row['name'] . "</div>";
+          echo "<div id='favouritesCompanySymbol'><a href='single-company.php?symbol=" . $row['symbol'] . "'>" . $row['symbol'] . "</a></div>";
+          echo "<div id='favouritesCompanyName'><a href='single-company.php?symbol=" . $row['symbol'] . "'>" . $row['name'] . "</a></div>";
           echo "</br>";
           echo "<form action='favorites.php'>
                 <button class='removeButton' name='re' value='" . $row['symbol'] . "' type='submit'>Remove</button>

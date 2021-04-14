@@ -64,13 +64,6 @@ function removeStorageCompanies() {
 function populateListOfCompanies(companies) {
     const companyList = document.querySelector("#listOfCompanies")
     for(let c of companies) {
-        // const imgDiv = document.createElement("div");
-        // imgDiv.setAttribute("id", "companyLogoContainer")
-        // const img = document.createElement("img");
-        // img.setAttribute("class", "companyListLogo")
-        // img.setAttribute("src", "logos/"+c.symbol+".svg");
-        // imgDiv.appendChild(img);
-
         const symbol = document.createElement("div");
         symbol.setAttribute("class", "listSymbol");
         symbol.innerHTML = "<a href='single-company.php?symbol=" + c.symbol + "'>" + c.symbol + "</a>";
