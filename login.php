@@ -112,8 +112,14 @@ require_once "db-classes.php";
             }
                 
                 
+        }
+            if(!next($row) && $_SESSION['loggedin-status'] != true){
+                
+                
+                echo "ERROR";
+                
+                
             }
-
 
 
         }
@@ -121,11 +127,12 @@ require_once "db-classes.php";
                 }
         
                 
-        
+                }
                 catch (PDOException $e) {
                     die( $e->getMessage() );
                 }
 
-}
+                
+
     ?>
 
