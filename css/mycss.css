@@ -336,6 +336,17 @@ a {
   #check:checked ~ ul{
     left: 0;
   }
+
+  #hamburgerLogout {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
 }
 
 /* CSS Loader source: https://loading.io/css/ */

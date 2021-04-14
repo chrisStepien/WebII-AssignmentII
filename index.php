@@ -29,7 +29,12 @@ session_start();
                 <li><a href='portfolio.php'>Portfolio</a></li>
                 <li><a href='profile.php'>Profile</a></li>
                 <li><a href='favorites.php'>Favourites</a></li>
-                <li><a href=#>Logout</a></li>";
+                <li>
+                <form method='post'>
+                <button id='hamburgerLogout' type='hidden' name='logout' value='Logout'>Logout</button>
+                </form>
+                </li>";
+
       }else{
           echo "<li><a class='active' href='index.php'>Home</a></li>
                 <li><a href='about.php'>About</a></li>
