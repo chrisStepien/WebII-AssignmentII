@@ -79,9 +79,11 @@ $cdb = new CompanyDB($conn);
         echo "<div class='content'><span class='label'>Description: </span>" . $row['description'] . "</div>";
         echo "</li>";
         echo "</br>";
+        if (isset($_SESSION['loggedin-status'])) {
         echo "<form method='get' action='favorites.php'>
                 <button type='submit' id='addToFavouritesButton' name='fav' value='" . $row['symbol'] . "'>Add to Favourites</button>
                   </form>";
+                }
         echo "<button type='button' id='stockHistoryButton' onclick=";
         echo "\"location.href='history.php?symbol=" . $row['symbol'] . "';\">Stock History</button>";
       }
