@@ -20,9 +20,29 @@ session_start();
       </label>
       <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
-        <li><a class="active" href="index.php">Home</a></li>
+        <?php
+
+      if(isset($_SESSION['loggedin-status'])){
+
+          echo "<li><a class='active' href='index.php'>Home</a></li>
+                <li><a href='about.php'>About</a></li>
+                <li><a href='list.php'>Companies</a></li>
+                <li><a href='portfolio.php'>Portfolio</a></li>
+                <li><a href='profile.php'>Profile</a></li>
+                <li><a href='favorites.php'>Favourites</a></li>
+                <li><a href='index.php'>Logout</a></li>";
+      }else{
+          echo "<li><a class='active' href='index.php'>Home</a></li>
+                <li><a href='about.php'>About</a></li>
+                <li><a href='list.php'>Companies</a></li>
+                <li><a href='login.php'>Login</a></li>";
+      }
+
+      ?>
+
+        <!-- <li><a class="active" href="index.php">Home</a></li>
         <li><a href="about.php">About</a></li>
-        <li><a href="list.php">Companies</a></li>
+        <li><a href="list.php">Companies</a></li> -->
       </ul>
     </nav>
 
@@ -35,10 +55,10 @@ session_start();
         <form action="list.php">
           <input type="submit" class="homeButtons" id="homeCompanies" value="Companies" />
         </form>
-            <?php 
-          
+            <?php
+
           if(isset($_SESSION['loggedin-status'])){
-              
+
               echo "<form action=portfolio.php>
                     <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
                     </form>";
@@ -51,29 +71,29 @@ session_start();
               echo "<form method=POST>
                     <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
                     </form>";
-              
+
           }else{
-              
-              
+
+
                 echo "<form action=login.php>
                     <input type=submit class=homeButtons id=homeLogin value=Login />
                     </form>";
                 echo "<form action=registration.php>
                     <input type=submit class=homeButtons id=homeSignUp value=SignUp />
                     </form>";
-              
+
           }
           if (isset($_POST['logout'])){
-            
+
               $_SESSION = array();
-              
+
               session_destroy();
-              
+
               header("Location: index.php");
           }
-          
+
           ?>
-        
+
       </div>
     </section>
   </body>

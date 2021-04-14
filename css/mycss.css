@@ -8,8 +8,8 @@
 
 body {
   font-family: Helvetica;
-  /*background-image: url(/WebII-AssignmentII/images/background.png);*/
-  background-image: url(/images/background.png);
+  background-image: url(/WebII-AssignmentII/images/background.png);
+  /* background-image: url(/images/background.png); */
   color: white;
 }
 
@@ -323,7 +323,7 @@ a {
   }
   nav ul li{
     display: block;
-    margin: 50px 0;
+    margin: 25px 0;
     line-height: 30px;
   }
   nav ul li a{
@@ -337,7 +337,6 @@ a {
     left: 0;
   }
 }
-
 
 /* CSS Loader source: https://loading.io/css/ */
 
