@@ -82,7 +82,7 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
       if (isset($_SESSION['user-id'])) {
         $uID = $_SESSION['user-id'];
         $port = $pdb->getAllForUser($uID);
-        $portfolio =
+        $portfolioValue = 0;
 
         $errorCheck = false;
 
@@ -101,6 +101,9 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
             echo "<td ></td>";
             echo "<td ></td>";
             echo "</tr>";
+            echo $portfolioValue;
+
+            $portfolioValue += $value;
           }
         }
       }
