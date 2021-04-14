@@ -11,5 +11,4 @@ function outputTableRow($row) {
   echo "</tr>";
 }
 
-
 ?>

@@ -1,139 +1,140 @@
-*{
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  list-style: none;
-  box-sizing: border-box;
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Helvetica;
-  /* background-image: url(/WebII-AssignmentII/images/background.png); */
-  background-image: url(/images/background.png);
-  color: white;
-  }
+    font-family: Helvetica;
+    /* background-image: url(/WebII-AssignmentII/images/background.png); */
+    background-image: url(/images/background.png);
+    color: white;
+}
 
 h1 {
-  text-align: center;
-  font-size: 36px;
-  font-weight: bold;
-  color: white;
-  margin-top: 10px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
 }
 
 .mainSection {
-  margin: 12px 12px 0px 12px;
+    margin: 12px 12px 0px 12px;
 }
 
 .miniLogo {
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-  margin-left: 10px;
-  margin-right: 25px;
-  background-color: white;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 25px;
+    background-color: white;
 }
 
 .listSymbol {
-  display: inline-block;
-  width: 60px;
-  text-decoration: underline;
+    display: inline-block;
+    width: 60px;
+    text-decoration: underline;
 }
 
 .listName {
-  display: inline-block;
-  /* width: 200px; */
-  text-decoration: underline;
+    display: inline-block;
+    /* width: 200px; */
+    text-decoration: underline;
 }
 
 .companiesListItem {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 ul#listOfCompanies {
-  height:370px;
-  width: 100%;
-  overflow: hidden;
-  overflow-y: scroll;
+    height: 370px;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
-ul#listOfCompanies li{
+ul#listOfCompanies li {
     cursor: pointer;
     font-size: 14px;
     color: white;
 }
 
-nav{
-  background: #0082e6;
-  height: 80px;
-  width: 100%;
-  position: relative;
-  z-index: 99;
+nav {
+    background: #0082e6;
+    height: 80px;
+    width: 100%;
+    position: relative;
+    z-index: 99;
 }
 
-label.logo{
-  color: white;
-  font-size: 35px;
-  line-height: 80px;
-  padding: 0 100px;
-  font-weight: bold;
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
 }
 
-nav ul{
-  float: right;
-  margin-right: 20px;
+nav ul {
+    float: right;
+    margin-right: 20px;
 }
 
-nav ul li{
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
 }
 
-nav ul li a{
-  color: white;
-  font-size: 17px;
-  padding: 7px 13px;
-  border-radius: 3px;
-  text-transform: uppercase;
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
 }
 
 #hamburgerLogout {
-background: none;
-border: none;
-cursor: pointer;
-color: white;
-font-size: 17px;
-padding: 7px 13px;
-border-radius: 3px;
-text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
 }
 
-a.active,a:hover{
-  background: #1b9bff;
-  transition: .5s;
+a.active,
+a:hover {
+    background: #1b9bff;
+    transition: .5s;
 }
 
-.checkbtn{
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
 }
 
-#check{
-  display: none;
+#check {
+    display: none;
 }
 
 #stockifylogo {
-  position: absolute;
-  left: 5%;
-  top: 25%;
-  width: 40px;
-  height: 40px;
+    position: absolute;
+    left: 5%;
+    top: 25%;
+    width: 40px;
+    height: 40px;
 }
 
 #stockDataTableHeader {
@@ -144,8 +145,8 @@ a.active,a:hover{
 }
 
 #stockDataDiv {
-    max-height:375px;
-    overflow:auto;
+    max-height: 375px;
+    overflow: auto;
     overflow-y: scroll;
 }
 
@@ -170,159 +171,161 @@ td {
     font-size: 8px;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
     background-color: #f2f2f2;
     color: black;
 }
 
-#stockHistoryButton{
-  position: absolute;
-  left: 32%;
+#stockHistoryButton {
+    position: absolute;
+    left: 32%;
 }
 
-#addToFavouritesButton{
-  position: absolute;
-  left: 3%;
+#addToFavouritesButton {
+    position: absolute;
+    left: 3%;
 }
 
 #companyWebsite {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 #companySymbol {
-  font-size: 24px;
-  font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 #companyName {
-  font-size: 15px;
+    font-size: 15px;
 }
 
 #companyLogo {
-  position: absolute;
-  width: 120px;
-  height: 60px;
-  z-index: 9;
-  background-color: white;
-  display: inline-block;
-  left: 66%;
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    z-index: 9;
+    background-color: white;
+    display: inline-block;
+    left: 66%;
 }
 
 .label {
-  font-size: 14px;
-  font-weight: bold;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .content {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 #comingsoon {
-
-  width: 380px;
-  height:250px;
+    width: 380px;
+    height: 250px;
 }
 
 #filterCompany {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 a {
-  color: white;
+    color: white;
 }
 
 .gitrepo {
     text-decoration: underline;
 }
 
+.link {
+    text-decoration: underline;
+}
+
 #labelEmail {
-  display: inline-block;
-  width: 75px;
+    display: inline-block;
+    width: 75px;
 }
 
 #linkSignUp {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 #loginParentDiv {
-  text-align: center;
+    text-align: center;
 }
 
 #homeButtonsParentDiv {
-  text-align: center;
+    text-align: center;
 }
 
 .loginInfo {
-  margin-bottom: 5px;
-  height: 27px;
+    margin-bottom: 5px;
+    height: 27px;
 }
 
 #login {
-  background-color: #34c7ff;
-  width: 250px;
-  height: 30px;
-  transition-duration: 0.2s;
-  border-radius: 4px;
-  font-size: 20px;
-  margin-top: 5px;
+    background-color: #34c7ff;
+    width: 250px;
+    height: 30px;
+    transition-duration: 0.2s;
+    border-radius: 4px;
+    font-size: 20px;
+    margin-top: 5px;
 }
 
 #login:hover {
-  background-color: #4CAF50;
-  color: white;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 #login:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 #loginEmail {
-  width: 250px;
+    width: 250px;
 }
 
 #loginPassword {
-  width: 250px;
+    width: 250px;
 }
 
-#errMessage{
-
-    color:red;
+#errMessage {
+    color: red;
 }
 
 .homeButtons {
-  background-color: #34c7ff;
-  width: 180px;
-  height: 50px;
-  transition-duration: 0.2s;
-  border-radius: 4px;
-  font-size: 20px;
-  margin-bottom: 5px;
+    background-color: #34c7ff;
+    width: 180px;
+    height: 50px;
+    transition-duration: 0.2s;
+    border-radius: 4px;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .homeButtons:hover {
-  background-color: #4CAF50;
-  color: white;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .homeButtons:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
-#zoomed img{
-  background-color: white;
-  display: none;
-  width: 200px;
-  height: 100px;
-  object-fit: contain;
-  overflow: hidden;
-  position: absolute;
-  /* top: 15%;
+#zoomed img {
+    background-color: white;
+    display: none;
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    overflow: hidden;
+    position: absolute;
+    /* top: 15%;
   left: 3%; */
 }
 
@@ -332,91 +335,98 @@ a {
     left: 120px;
 }
 
-@media (max-width: 952px){
-  label.logo{
-    font-size: 30px;
-    padding-left: 50px;
-  }
-  nav ul li a{
-    font-size: 16px;
-  }
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
 }
-@media (max-width: 858px){
-  .checkbtn{
-    display: block;
-  }
-  nav ul{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-  }
-  nav ul li{
-    display: block;
-    margin: 25px 0;
-    line-height: 30px;
-  }
-  nav ul li a{
-    font-size: 20px;
-  }
-  a:hover,a.active{
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked ~ ul{
-    left: 0;
-  }
 
-  #hamburgerLogout {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: white;
-  font-size: 20px;
-  padding: 7px 13px;
-  border-radius: 3px;
-  text-transform: uppercase;
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    a:hover,
+    a.active {
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+    #hamburgerLogout {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+        padding: 7px 13px;
+        border-radius: 3px;
+        text-transform: uppercase;
+    }
 }
-}
+
 
 /* CSS Loader source: https://loading.io/css/ */
 
 .lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
 }
+
 .lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #cdd422;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #c2dde6 transparent transparent transparent;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #cdd422;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #c2dde6 transparent transparent transparent;
 }
+
 .lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
+    animation-delay: -0.45s;
 }
+
 .lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
+    animation-delay: -0.3s;
 }
+
 .lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
+    animation-delay: -0.15s;
 }
+
 @keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

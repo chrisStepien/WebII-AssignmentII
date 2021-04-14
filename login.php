@@ -10,8 +10,6 @@ require_once "db-classes.php";
 $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
 $gateway = new UserDB($conn);
 
-
-
 ?>
 
 <!DOCTYPE html>
