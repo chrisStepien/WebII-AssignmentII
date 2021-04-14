@@ -117,17 +117,18 @@ require_once "db-classes.php";
                 
         }
             
-            if($errorCheck == false){
-                
-                
-                echo "ERROR";
-                
-                
-            }
+            
 
 
         }
                 $pdo = null;
+                if($errorCheck == false){
+                
+                
+                echo "<h2>Error: Invalid Email and/or Password.</h2>"
+                
+                
+            }
                 }
         
                 
