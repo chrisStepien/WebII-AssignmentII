@@ -82,7 +82,7 @@ require_once "db-classes.php";
            if($errorCheck == false && isset($_POST['login'])){
                 
                 
-                echo "<div>Error: Invalid Email and/or Password.</div>";
+                echo "<div style:color=red>Invalid Email and/or Password. Please try again</div><br/>";
                 
                 
             }
