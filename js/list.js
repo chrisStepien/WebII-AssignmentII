@@ -34,8 +34,12 @@ if(storedCompanies.length == 0) {
     fetch(data1)
     .then( response => response.json() )
     .then( data => {
+        document.querySelector("#loader1").style.display = "block";
         localStorage.setItem('companies',JSON.stringify(data));
         storedCompanies = JSON.parse(localStorage.getItem('companies'));
+    })
+    .then( () => {
+            document.querySelector("#loader1").style.display = "none";
     })
     .then( data => populateListOfCompanies(storedCompanies) )
     .then( data => textFilter() )
@@ -44,6 +48,7 @@ if(storedCompanies.length == 0) {
 
 //if content is found in local storage, then use local copy
 else {
+    document.querySelector("#loader1").style.display = "none";
     populateListOfCompanies(storedCompanies);
     textFilter();
 }

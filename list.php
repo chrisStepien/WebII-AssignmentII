@@ -59,6 +59,7 @@ session_start();
       <button type="button" id="clear" class="filterButton">Clear</button><br/>
       <ul id="listOfCompanies"></ul>
       <div id="zoomed"><img id='zoomedImage'></div>
+      <div id="loader1" class="lds-ring"><div></div><div></div><div></div><div></div></div>
     </section>
 
 
