@@ -107,7 +107,7 @@ for (let x of ml) {
   });
 
   x.addEventListener("mousemove", function(e) {
-    var posX = e.clientX * 0.09;
+    var posX = e.clientX * 0.065;
     var posY = e.clientY * 0.065;
 
     document.querySelector("#zoomed").style.left = posX + "%";
