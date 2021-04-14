@@ -4,8 +4,9 @@ session_start();
 
 
 require_once "config.php";
-require_once "db-classes.php";
+require_once "db-classes.php";  
 
+   
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
   $gateway = new UserDB($conn);
@@ -75,6 +76,20 @@ require_once "db-classes.php";
       </div>
       <div>
       <button type="submit" id="login" value="submit" name="login">Login</button><br/><br/>
+          
+          <?php
+          
+           if($errorCheck == false && isset($_POST['login'])){
+                
+                
+                echo "<div id=errMessage>The Email and/or Password you provided is incorrect. Please try again.</div><br/>";
+                
+                
+            }
+          
+          
+          ?>
+          
       No account? <a href='registration.php' id='linkSignUp'>Click here to sign up</a><br/>
       </div>
       </form>
@@ -91,39 +106,46 @@ require_once "db-classes.php";
 
             $email = $_POST['email'];
             $pass = $_POST['password'];
-
+            $errorCheck = false;
             try {
                 $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "select * from users";
                 $result = $pdo->query($sql);
                 // loop through the data
-                while ($row = $result->fetch()) {
+        while ($row = $result->fetch()) {
+        
+            
 
         if($row['email'] == $email){
 
             if(password_verify($pass, $row['password'])){
-
+                
+               $errorCheck = true;    
                $_SESSION['loggedin-status'] = true;
                $_SESSION['user-id'] = $row['id'];
                 header('Location: index.php');
+                
             }
-
+                
+                
+        }
+            
+            
 
 
         }
-
-                }
                 $pdo = null;
-            }
+               
+                }
+        
+                
+                
                 catch (PDOException $e) {
                     die( $e->getMessage() );
                 }
 
-        }
-
-
-
-
+}
 
     ?>
+

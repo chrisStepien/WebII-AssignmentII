@@ -287,6 +287,11 @@ a {
   width: 250px;
 }
 
+#errMessage{
+    
+    color:red;
+}
+
 .homeButtons {
   background-color: #34c7ff;
   width: 180px;
@@ -307,6 +312,24 @@ a {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+#zoomed img{
+  background-color: white;
+  display: none;
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+  overflow: hidden;
+  position: absolute;
+  /* top: 15%;
+  left: 3%; */
+}
+
+#loader1 {
+    position: absolute;
+    top: 300px;
+    left: 120px;
 }
 
 @media (max-width: 952px){
