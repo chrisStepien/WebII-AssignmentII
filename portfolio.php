@@ -90,7 +90,7 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
           if ($row['userId'] == $uID) {
             $highest = $hdb->getLatestForSymbol($row['symbol']);
             echo "<tr>";
-            echo "<td><img src='./logos/" . $row['symbol'] . ".svg' width='75px' height='100px'></td>";
+            echo "<td><img src='./logos/" . $row['symbol'] . ".svg' width='37px' height='50px'></td>";
             echo "<td >" . $row['symbol'] . "</td>";
             echo "<td >" . $row['name'] . "</td>";
             echo "<td >" . $row['amount'] . "</td>";
@@ -110,8 +110,9 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
       }
 
       $pdo = null;
+      echo  "<tr>Total Portfolio Value: " . number_format($portfolioValue, 2, '.', '') . "</tr>";
       echo "</table>";
-      echo $portfolioValue;
+      
       ?>
   </section>
 </body>
