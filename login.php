@@ -92,7 +92,7 @@ require_once "db-classes.php";
 
             $email = $_POST['email'];
             $pass = $_POST['password'];
-
+            $errorCheck = false;
             try {
                 $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -100,20 +100,24 @@ require_once "db-classes.php";
                 $result = $pdo->query($sql);
                 // loop through the data
         while ($row = $result->fetch()) {
-
+        
+            
 
         if($row['email'] == $email){
 
             if(password_verify($pass, $row['password'])){
-
+                
+               $errorCheck = true;    
                $_SESSION['loggedin-status'] = true;
                $_SESSION['user-id'] = $row['id'];
                 header('Location: index.php');
+                
             }
                 
                 
         }
-            if(!next($row) && $_SESSION['loggedin-status'] != true){
+            
+            if($errorCheck == false){
                 
                 
                 echo "ERROR";
