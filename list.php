@@ -1,5 +1,3 @@
-<!-- https://github.com/malaman/js-image-zoom -->
-
 <?php
 // Initialize session
 session_start();
