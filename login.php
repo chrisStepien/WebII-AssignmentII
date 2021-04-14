@@ -125,7 +125,7 @@ require_once "db-classes.php";
                 if($errorCheck == false){
                 
                 
-                echo "<h2>Error: Invalid Email and/or Password.</h2>"
+                echo "<h2>Error: Invalid Email and/or Password.</h2>";
                 
                 
             }
