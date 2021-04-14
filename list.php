@@ -1,3 +1,10 @@
+<!-- https://github.com/malaman/js-image-zoom -->
+
+<?php
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -14,9 +21,34 @@
       </label>
       <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="about.php">About</a></li>
-        <li><a class="active" href="list.php">Companies</a></li>
+        <?php
+
+        if(isset($_SESSION['loggedin-status'])){
+            echo "<li><a href='index.php'>Home</a></li>
+                  <li><a href='about.php'>About</a></li>
+                  <li><a class='active' href='list.php'>Companies</a></li>
+                  <li><a href='portfolio.php'>Portfolio</a></li>
+                  <li><a href='profile.php'>Profile</a></li>
+                  <li><a href='favorites.php'>Favourites</a></li>
+                  <li>
+                  <form method='post'>
+                  <button id='hamburgerLogout' type='hidden' name='logout' value='Logout'>Logout</button>
+                  </form>
+                  </li>";
+        }else{
+            echo "<li><a href='index.php'>Home</a></li>
+                  <li><a href='about.php'>About</a></li>
+                  <li><a class='active' href='list.php'>Companies</a></li>
+                  <li><a href='login.php'>Login</a></li>";
+        }
+
+        if (isset($_POST['logout'])){
+            $_SESSION = array();
+            session_destroy();
+            header("Location: index.php");
+        }
+
+        ?>
       </ul>
     </nav>
 
@@ -26,8 +58,11 @@
       <input type="text" id="filterCompany" placeholder="Filter out companies...">
       <button type="button" id="clear" class="filterButton">Clear</button><br/>
       <ul id="listOfCompanies"></ul>
-
-      <script src="./js/list.js"></script>
+      <div id="zoomed"><img id='zoomedImage'></div>
+      <div id="loader1" class="lds-ring"><div></div><div></div><div></div><div></div></div>
     </section>
+
+
+    <script src="./js/list.js"></script>
   </body>
 </html>
