@@ -31,8 +31,8 @@ $hdb = new HistoryDB($conn);
 
         if(isset($_SESSION['loggedin-status'])){
             echo "<li><a href='index.php'>Home</a></li>
-                  <li><a class='active' href='about.php'>About</a></li>
-                  <li><a href='list.php'>Companies</a></li>
+                  <li><a href='about.php'>About</a></li>
+                  <li><a class='active' href='list.php'>Companies</a></li>
                   <li><a href='portfolio.php'>Portfolio</a></li>
                   <li><a href='profile.php'>Profile</a></li>
                   <li><a href='favorites.php'>Favourites</a></li>
@@ -43,8 +43,8 @@ $hdb = new HistoryDB($conn);
                   </li>";
         }else{
             echo "<li><a href='index.php'>Home</a></li>
-                  <li><a class='active' href='about.php'>About</a></li>
-                  <li><a href='list.php'>Companies</a></li>
+                  <li><a href='about.php'>About</a></li>
+                  <li><a class='active' href='list.php'>Companies</a></li>
                   <li><a href='login.php'>Login</a></li>";
         }
 
