@@ -109,12 +109,7 @@ require_once "db-classes.php";
                $_SESSION['loggedin-status'] = true;
                $_SESSION['user-id'] = $row['id'];
                 header('Location: index.php');
-            } else {
-                
-                echo "Error";
-                
-                
-            }   
+            }
                 
                 
             }
