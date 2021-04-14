@@ -20,9 +20,23 @@
       </label>
       <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="about.php">About</a></li>
-        <li><a href="list.php">Companies</a></li>
+        <?php
+        if(isset($_SESSION['loggedin-status'])){
+            echo "<li><a href='index.php'>Home</a></li>
+                  <li><a href='about.php'>About</a></li>
+                  <li><a href='list.php'>Companies</a></li>
+                  <li><a class='active' href='portfolio.php'>Portfolio</a></li>
+                  <li><a href='profile.php'>Profile</a></li>
+                  <li><a href='favorites.php'>Favourites</a></li>
+                  <li><a href=#>Logout</a></li>";
+        }else{
+            echo "<li><a class='active' href='index.php'>Home</a></li>
+                  <li><a href='about.php'>About</a></li>
+                  <li><a href='list.php'>Companies</a></li>
+                  <li><a href='login.php'>Login</a></li>";
+        }
+
+        ?>
       </ul>
     </nav>
 

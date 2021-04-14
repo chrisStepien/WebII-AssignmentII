@@ -20,7 +20,7 @@ session_start();
       </label>
       <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
-        <?php
+      <?php
 
       if(isset($_SESSION['loggedin-status'])){
           echo "<li><a class='active' href='index.php'>Home</a></li>
@@ -29,7 +29,7 @@ session_start();
                 <li><a href='portfolio.php'>Portfolio</a></li>
                 <li><a href='profile.php'>Profile</a></li>
                 <li><a href='favorites.php'>Favourites</a></li>
-                <li><a href='index.php'>Logout</a></li>";
+                <li><a href=#>Logout</a></li>";
       }else{
           echo "<li><a class='active' href='index.php'>Home</a></li>
                 <li><a href='about.php'>About</a></li>

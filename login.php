@@ -10,7 +10,7 @@ require_once "db-classes.php";
   DBUSER, DBPASS));
   $gateway = new UserDB($conn);
 
- 
+
 
 ?>
 
@@ -30,9 +30,24 @@ require_once "db-classes.php";
       </label>
       <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="about.php">About</a></li>
-        <li><a href="list.php">Companies</a></li>
+        <?php
+
+        if(isset($_SESSION['loggedin-status'])){
+            echo "<li><a href='index.php'>Home</a></li>
+                  <li><a href='about.php'>About</a></li>
+                  <li><a href='list.php'>Companies</a></li>
+                  <li><a href='portfolio.php'>Portfolio</a></li>
+                  <li><a href='profile.php'>Profile</a></li>
+                  <li><a href='favorites.php'>Favourites</a></li>
+                  <li><a href=#>Logout</a></li>";
+        }else{
+            echo "<li><a href='index.php'>Home</a></li>
+                  <li><a href='about.php'>About</a></li>
+                  <li><a href='list.php'>Companies</a></li>
+                  <li><a class='active' href='login.php'>Login</a></li>";
+        }
+
+        ?>
       </ul>
     </nav>
 
@@ -58,15 +73,15 @@ require_once "db-classes.php";
 
   </body>
 </html>
- <?php 
-            
-       
+ <?php
+
+
 
         if (isset($_POST['login'])){
-            
+
             $email = $_POST['email'];
             $pass = $_POST['password'];
-           
+
             try {
                 $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -76,29 +91,29 @@ require_once "db-classes.php";
                 while ($row = $result->fetch()) {
 
         if($row['email'] == $email){
-        
+
             if(password_verify($pass, $row['password'])){
-                
+
                $_SESSION['loggedin-status'] = true;
                $_SESSION['user-id'] = $row['id'];
                 header('Location: index.php');
             }
-    
-    
-    
+
+
+
         }
-    
+
                 }
                 $pdo = null;
             }
                 catch (PDOException $e) {
                     die( $e->getMessage() );
                 }
-            
+
         }
-            
-        
-          
-        
-    
+
+
+
+
+
     ?>
