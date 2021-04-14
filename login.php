@@ -4,8 +4,10 @@ session_start();
 
 
 require_once "config.php";
-require_once "db-classes.php";
+require_once "db-classes.php";  
 
+
+  $_SESSION['error'] = "Invalid Email and/or Password.";    
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
   $gateway = new UserDB($conn);
@@ -73,15 +75,23 @@ require_once "db-classes.php";
                 $sql = "select * from users";
                 $result = $pdo->query($sql);
                 // loop through the data
-                while ($row = $result->fetch()) {
+        while ($row = $result->fetch()) {
 
-        if($row['email'] == $email){
+            if($row['email'] == $email){
         
             if(password_verify($pass, $row['password'])){
                 
                $_SESSION['loggedin-status'] = true;
                $_SESSION['user-id'] = $row['id'];
                 header('Location: index.php');
+            } else {
+                
+                echo $_SESSION['message'];
+                
+                
+            }   
+                
+                
             }
     
     
@@ -95,7 +105,7 @@ require_once "db-classes.php";
                     die( $e->getMessage() );
                 }
             
-        }
+        
             
         
           
