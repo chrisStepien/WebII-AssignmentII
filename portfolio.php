@@ -101,10 +101,11 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
             echo "<td ></td>";
             echo "<td ></td>";
             echo "</tr>";
-            echo $portfolioValue;
+            
 
             $portfolioValue += $value;
           }
+          echo $portfolioValue;
         }
       }
 
