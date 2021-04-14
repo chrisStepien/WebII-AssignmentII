@@ -59,9 +59,12 @@ function removeStorageCompanies() {
 function populateListOfCompanies(companies) {
     const companyList = document.querySelector("#listOfCompanies")
     for(let c of companies) {
-        const img = document.createElement("img");
-        img.setAttribute("class", "companyListLogo")
-        img.setAttribute("src", "logos/"+c.symbol+".svg");
+        // const imgDiv = document.createElement("div");
+        // imgDiv.setAttribute("id", "companyLogoContainer")
+        // const img = document.createElement("img");
+        // img.setAttribute("class", "companyListLogo")
+        // img.setAttribute("src", "logos/"+c.symbol+".svg");
+        // imgDiv.appendChild(img);
 
         const symbol = document.createElement("div");
         symbol.setAttribute("class", "listSymbol");
@@ -89,6 +92,33 @@ document.querySelector("#filterCompany").addEventListener("keyup", function(e) {
 document.querySelector("#clear").addEventListener("click", function(e) {
     clearFilter();
 });
+
+const ml = document.querySelectorAll(".miniLogo");
+for (let x of ml) {
+  x.addEventListener("mouseenter", function(e) {
+    document.querySelector("#zoomed").style.display = "block";
+    document.querySelector("#zoomedImage").style.display = "block";
+    document.querySelector("#zoomedImage").setAttribute("src", e.target.getAttribute("src"));
+  });
+
+  x.addEventListener("mousemove", function(e) {
+    var posX = e.clientX * 0.09;
+    var posY = e.clientY * 0.065;
+
+    document.querySelector("#zoomed").style.left = posX + "%";
+    document.querySelector("#zoomed").style.top = posY + "%";
+    document.querySelector("#zoomedImage").style.left = posX + "%";
+    document.querySelector("#zoomedImage").style.top = posY + "%";
+
+  });
+
+  x.addEventListener("mouseleave", function() {
+    document.querySelector("#zoomed").style.display = "none";
+    document.querySelector("#zoomedImage").style.display = "none";
+  });
+
+}
+
 
 
 

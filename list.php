@@ -1,3 +1,5 @@
+<!-- https://github.com/malaman/js-image-zoom -->
+
 <?php
 
 session_start();
@@ -56,8 +58,10 @@ session_start();
       <input type="text" id="filterCompany" placeholder="Filter out companies...">
       <button type="button" id="clear" class="filterButton">Clear</button><br/>
       <ul id="listOfCompanies"></ul>
-
-      <script src="./js/list.js"></script>
+      <div id="zoomed"><img id='zoomedImage'></div>
     </section>
+
+
+    <script src="./js/list.js"></script>
   </body>
 </html>
