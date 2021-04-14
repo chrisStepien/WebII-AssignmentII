@@ -8,8 +8,8 @@
 
 body {
   font-family: Helvetica;
-  /* background-image: url(/WebII-AssignmentII/images/background.png); */
-  background-image: url(/images/background.png);
+  background-image: url(/WebII-AssignmentII/images/background.png);
+  /* background-image: url(/images/background.png); */
   color: white;
   }
 
@@ -285,6 +285,11 @@ a {
 
 #loginPassword {
   width: 250px;
+}
+
+#errMessage{
+    
+    color:red;
 }
 
 .homeButtons {

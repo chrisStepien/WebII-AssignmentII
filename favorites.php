@@ -1,5 +1,10 @@
 <?php
   session_start();
+  require_once 'config.php';
+require_once 'db-classes.php';
+  $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
+$cdb = new CompanyDB($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +56,67 @@
 
     <h1>FAVOURITES</h1>
     <section class="mainSection">
-      <img id="comingsoon" src="images/comingsoon.png" alt="comingsoon">
+    <form action='favorites.php'>
+            <input type="submit" name="submit"
+                   value="Clear"
+                   >
+        </form>
+      <?php
+     if(isset($_GET['fav'])){
+      $sybo = isset($_SESSION['sy']) ? $_SESSION['sy'] : array();
+$sybo[] = $_GET['fav'];
+$_SESSION['sy'] = $sybo;
+$symbo=array_unique($_SESSION['sy']); 
+    }
+      if (sizeof($_SESSION['sy'])>0){$sybo = isset($_SESSION['sy']) ? $_SESSION['sy'] : array();
+      
+        $_SESSION['sy'] = $sybo;
+        $symbo=array_unique($_SESSION['sy']); 
+        foreach($symbo as $i=>$s){
+          foreach ($cdb->getAllForSymbol($s) as $row){
+            $index=0;
+            echo "<li class='companyListItem'>";
+          echo "<div><img src='./logos/" . $row['symbol'] . ".svg' id='companyLogo'></div>";
+          echo "<div id='companySymbol'>" . $row['symbol'] . "</div>";
+          echo "<div id='companyName'>" . $row['name'] . "</div>";
+          echo "<div class='content'><a id='companyWebsite' href='" . $row['website'] . "'>" . $row['website'] . "</a></div>";
+          echo "</br>";
+          echo "<div class='content'><span class='label'>Sector: </span>" . $row['sector'] . "</div>";
+          echo "<div class='content'><span class='label'>Subindustry: </span>" . $row['subindustry'] . "</div>";
+          echo "<div class='content'><span class='label'>Address: </span>" . $row['address'] . "</div>";
+          echo "<div class='content'><span class='label'>Exchange: </span>" . $row['exchange'] . "</div>";
+          echo "</br>";
+          echo"<form action='favorites.php'>
+          <input type='submit' name='re'
+                 value='".$row['symbol']."'>
+      </form>";
+          echo "<div class='content'><span class='label'>Description: </span>" . $row['description'] . "</div>";
+          echo "</li>";
+          echo "</br>";
+          }
+          }
+          if(isset($_GET['re'])){
+            foreach($_SESSION['sy'] as $i=>$s){
+            if ($_GET['re'] == $s){
+              unset($_SESSION['sy'][$i]);
+          }
+        }
+          print_r($symbo);
+          header('Location: favorites.php');
+      }
+        
+      }
+      else{
+        echo "No Favorites yet!";
+      }
+       
+      if(isset($_GET['submit']))
+      {
+        $_SESSION['sy'] =[]; 
+        header('Location: favorites.php');
+      }
+
+      ?>
 
     </section>
 
