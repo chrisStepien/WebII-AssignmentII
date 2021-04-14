@@ -127,12 +127,12 @@ require_once "db-classes.php";
                 }
         
                 
-                }
+                
                 catch (PDOException $e) {
                     die( $e->getMessage() );
                 }
 
-                
+}
 
     ?>
 
