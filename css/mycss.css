@@ -208,6 +208,32 @@ tr:nth-child(even){
   left: 66%;
 }
 
+#favouritesCompanyLogo {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  z-index: 9;
+  background-color: white;
+  display: inline-block;
+  left: 65%;
+}
+
+#favouritesCompanySymbol {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#favouritesCompanyName {
+  font-size: 15px;
+}
+
+#removeAllButton{
+  position: relative;
+  z-index: 9;
+  left: 41%;
+  margin-bottom: 10px;
+}
+
 .label {
   font-size: 14px;
   font-weight: bold;
