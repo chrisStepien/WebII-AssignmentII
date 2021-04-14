@@ -77,7 +77,7 @@ session_start();
                     <input type=submit class=homeButtons id=homeLogin value=Login />
                     </form>";
         echo "<form action=registration.php>
-                    <input type=submit class=homeButtons id=homeSignUp value=Sign-Up />
+                    <input type=submit class=homeButtons id=homeSignUp value=SignUp />
                     </form>";
       }
       // End the session and clears the session variables

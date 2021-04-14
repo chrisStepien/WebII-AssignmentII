@@ -61,7 +61,7 @@ $gateway = new UserDB($conn);
     </ul>
   </nav>
 
-  <h1>LOG IN</h1>
+  <h1>LOGIN</h1>
   <section class="mainSection">
     <div id="loginParentDiv">
       <form method="POST" action="">
