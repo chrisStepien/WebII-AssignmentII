@@ -1,5 +1,5 @@
 <?php
-
+// Initialize session
 session_start();
 
 require_once 'config.php';
@@ -29,14 +29,14 @@ $cdb = new CompanyDB($conn);
     <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
     <ul>
       <?php
-
+      // Change website layout depending on session status
       if (isset($_SESSION['loggedin-status'])) {
         echo "<li><a href='index.php'>Home</a></li>
                   <li><a href='about.php'>About</a></li>
                   <li><a class='active' href='list.php'>Companies</a></li>
                   <li><a href='portfolio.php'>Portfolio</a></li>
                   <li><a href='profile.php'>Profile</a></li>
-                  <li><a href='favorites.php'>Favourites</a></li>
+                  <li><a href='favorites.php'>Favorites</a></li>
                   <li>
                   <form method='post'>
                   <button id='hamburgerLogout' type='hidden' name='logout' value='Logout'>Logout</button>
@@ -48,7 +48,7 @@ $cdb = new CompanyDB($conn);
                   <li><a class='active' href='list.php'>Companies</a></li>
                   <li><a href='login.php'>Login</a></li>";
       }
-
+      // End the session and clears the session variables
       if (isset($_POST['logout'])) {
         $_SESSION = array();
         session_destroy();
@@ -63,6 +63,7 @@ $cdb = new CompanyDB($conn);
   <section class="mainSection">
     <ul id="companyInfo">
       <?php
+      // Output the markup for a single company
       foreach ($cdb->getAllForSymbol($_GET['symbol']) as $row) {
         echo "<li class='companyListItem'>";
         echo "<div><img src='./logos/" . $row['symbol'] . ".svg' id='companyLogo'></div>";

@@ -2,11 +2,11 @@
 // Initialize session
 session_start();
 
-
+// Required files
 require_once "config.php";
 require_once "db-classes.php";
 
-
+// Connection to database
 $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
 $gateway = new UserDB($conn);
 
@@ -31,14 +31,14 @@ $gateway = new UserDB($conn);
     <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
     <ul>
       <?php
-
+      // Change website layout depending on session status
       if (isset($_SESSION['loggedin-status'])) {
         echo "<li><a href='index.php'>Home</a></li>
                   <li><a href='about.php'>About</a></li>
                   <li><a href='list.php'>Companies</a></li>
                   <li><a href='portfolio.php'>Portfolio</a></li>
                   <li><a href='profile.php'>Profile</a></li>
-                  <li><a href='favorites.php'>Favourites</a></li>
+                  <li><a href='favorites.php'>Favorites</a></li>
                   <li>
                   <form method='post'>
                   <button id='hamburgerLogout' type='hidden' name='logout' value='Logout'>Logout</button>
@@ -50,7 +50,7 @@ $gateway = new UserDB($conn);
                   <li><a href='list.php'>Companies</a></li>
                   <li><a class='active' href='login.php'>Login</a></li>";
       }
-
+      // End the session and clears the session variables
       if (isset($_POST['logout'])) {
         $_SESSION = array();
         session_destroy();
@@ -75,6 +75,7 @@ $gateway = new UserDB($conn);
           <button type="submit" id="login" value="submit" name="login">Login</button><br /><br />
 
           <?php
+          // Error message for incorrect login credentials 
           if ($errorCheck == false && isset($_POST['login'])) {
             echo "<div id=errMessage>The Email and/or Password you provided is incorrect. Please try again.</div><br/>";
           }
@@ -91,26 +92,24 @@ $gateway = new UserDB($conn);
 <?php
 
 
-
+// Login check
 if (isset($_POST['login'])) {
 
   $email = $_POST['email'];
   $pass = $_POST['password'];
   $errorCheck = false;
+// Try catch for error handling  
   try {
     $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "select * from users";
     $result = $pdo->query($sql);
-    // loop through the data
+    // Loop through the data
     while ($row = $result->fetch()) {
-
-
-
+      // Check if email equals an email in the database
       if ($row['email'] == $email) {
-
+        // Check if password for the specific email is correct, then logs the user in if is correct
         if (password_verify($pass, $row['password'])) {
-
           $errorCheck = true;
           $_SESSION['loggedin-status'] = true;
           $_SESSION['user-id'] = $row['id'];

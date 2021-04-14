@@ -1,13 +1,15 @@
 <!-- https://www.itsolutionstuff.com/post/column-sorting-using-php-and-mysqlexample.html -->
 
 <?php
-
+// Initialize session
 session_start();
 
+// Required files
 require_once 'config.php';
 require_once 'db-classes.php';
 require_once 'helper.php';
 
+// Connection to database
 $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
 $hdb = new HistoryDB($conn);
 
@@ -32,14 +34,14 @@ $hdb = new HistoryDB($conn);
     <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
     <ul>
       <?php
-
+      // Change website layout depending on session status
       if (isset($_SESSION['loggedin-status'])) {
         echo "<li><a href='index.php'>Home</a></li>
                   <li><a href='about.php'>About</a></li>
                   <li><a class='active' href='list.php'>Companies</a></li>
                   <li><a href='portfolio.php'>Portfolio</a></li>
                   <li><a href='profile.php'>Profile</a></li>
-                  <li><a href='favorites.php'>Favourites</a></li>
+                  <li><a href='favorites.php'>Favorites</a></li>
                   <li>
                   <form method='post'>
                   <button id='hamburgerLogout' type='hidden' name='logout' value='Logout'>Logout</button>
@@ -51,7 +53,7 @@ $hdb = new HistoryDB($conn);
                   <li><a class='active' href='list.php'>Companies</a></li>
                   <li><a href='login.php'>Login</a></li>";
       }
-
+      // End the session and clears the session variables
       if (isset($_POST['logout'])) {
         $_SESSION = array();
         session_destroy();
@@ -65,8 +67,9 @@ $hdb = new HistoryDB($conn);
   <h1>MONTHLY DATA</h1>
   <section class="mainSection">
     <table id='stockDataTableHeader'>
-
+      
       <?php
+      // Creating table for stock data and sorting depending on user selection
       $orderBy = !empty($_GET["sort"]) ? $_GET["sort"] : "date";
       $order = !empty($_GET["order"]) ? $_GET["order"] : "desc";
 

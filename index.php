@@ -1,6 +1,7 @@
 <!-- https://www.codingnepalweb.com/2020/04/responsive-menu-bar-in-html-css.html -->
 <!-- https://www.goldencoreex.com/images/xz_bg.png -->
 <?php
+// Initialize session
 session_start();
 ?>
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ session_start();
     <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
     <ul>
       <?php
-
+      // Change website layout depending on session status
       if (isset($_SESSION['loggedin-status'])) {
         echo "<li><a class='active' href='index.php'>Home</a></li>
                 <li><a href='about.php'>About</a></li>
@@ -57,6 +58,7 @@ session_start();
         <input type="submit" class="homeButtons" id="homeCompanies" value="Companies" />
       </form>
       <?php
+      // Change website layout depending on session status
       if (isset($_SESSION['loggedin-status'])) {
         echo "<form action=portfolio.php>
                     <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
@@ -78,7 +80,7 @@ session_start();
                     <input type=submit class=homeButtons id=homeSignUp value=Sign-Up />
                     </form>";
       }
-
+      // End the session and clears the session variables
       if (isset($_POST['logout'])) {
         $_SESSION = array();
         session_destroy();

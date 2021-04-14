@@ -1,5 +1,5 @@
 <?php
-
+// Initialize session
 session_start();
 ?>
 
@@ -22,14 +22,14 @@ session_start();
     <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
     <ul>
       <?php
-
+      // Change website layout depending on session status
       if (isset($_SESSION['loggedin-status'])) {
         echo "<li><a href='index.php'>Home</a></li>
                   <li><a href='about.php'>About</a></li>
                   <li><a class='active' href='list.php'>Companies</a></li>
                   <li><a href='portfolio.php'>Portfolio</a></li>
                   <li><a href='profile.php'>Profile</a></li>
-                  <li><a href='favorites.php'>Favourites</a></li>
+                  <li><a href='favorites.php'>Favorites</a></li>
                   <li>
                   <form method='post'>
                   <button id='hamburgerLogout' type='hidden' name='logout' value='Logout'>Logout</button>
@@ -41,7 +41,7 @@ session_start();
                   <li><a class='active' href='list.php'>Companies</a></li>
                   <li><a href='login.php'>Login</a></li>";
       }
-
+      // End the session and clears the session variables
       if (isset($_POST['logout'])) {
         $_SESSION = array();
         session_destroy();
@@ -66,7 +66,6 @@ session_start();
       <div></div>
     </div>
   </section>
-
 
   <script src="./js/list.js"></script>
 </body>

@@ -1,5 +1,5 @@
 <?php
-
+// Outputs table row
 function outputTableRow($row) {
   echo "<tr>";
   echo "<td class='stockRow' id='stockDate'>" . $row['date'] . "</td>";
