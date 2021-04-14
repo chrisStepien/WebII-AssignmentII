@@ -105,13 +105,13 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
 
             $portfolioValue += $value;
           }
-          echo $portfolioValue;
+          
         }
       }
 
       $pdo = null;
       echo "</table>";
-
+      echo $portfolioValue;
       ?>
   </section>
 </body>
