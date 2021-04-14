@@ -6,8 +6,7 @@ session_start();
 require_once "config.php";
 require_once "db-classes.php";  
 
-
-  $_SESSION['error'] = "Invalid Email and/or Password.";    
+   
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
   $gateway = new UserDB($conn);
@@ -112,7 +111,7 @@ require_once "db-classes.php";
                 header('Location: index.php');
             } else {
                 
-                echo $_SESSION['message'];
+                echo "Error";
                 
                 
             }   
@@ -125,6 +124,7 @@ require_once "db-classes.php";
         }
 
                 }
+        
                 $pdo = null;
             }
                 catch (PDOException $e) {
