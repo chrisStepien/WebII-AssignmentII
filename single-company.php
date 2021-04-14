@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once 'config.php';
 require_once 'db-classes.php';
 
@@ -43,6 +45,12 @@ $cdb = new CompanyDB($conn);
                   <li><a href='about.php'>About</a></li>
                   <li><a class='active' href='list.php'>Companies</a></li>
                   <li><a href='login.php'>Login</a></li>";
+        }
+
+        if (isset($_POST['logout'])){
+            $_SESSION = array();
+            session_destroy();
+            header("Location: index.php");
         }
 
         ?>

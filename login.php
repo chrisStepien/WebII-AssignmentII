@@ -51,6 +51,12 @@ require_once "db-classes.php";
                   <li><a class='active' href='login.php'>Login</a></li>";
         }
 
+        if (isset($_POST['logout'])){
+            $_SESSION = array();
+            session_destroy();
+            header("Location: index.php");
+        }
+
         ?>
       </ul>
     </nav>
