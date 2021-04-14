@@ -26,7 +26,7 @@
       </ul>
     </nav>
 
-    <h1>PROFILE</h1>
+    <h1>PORTFOLIO</h1>
     <section class="mainSection">
       <img id="comingsoon" src="images/comingsoon.png" alt="comingsoon">
     </section>
