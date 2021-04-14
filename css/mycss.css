@@ -8,7 +8,6 @@
 
 body {
     font-family: Helvetica;
-    /* background-image: url(/WebII-AssignmentII/images/background.png); */
     background-image: url(/images/background.png);
     color: white;
 }
@@ -325,8 +324,6 @@ a {
     object-fit: contain;
     overflow: hidden;
     position: absolute;
-    /* top: 15%;
-  left: 3%; */
 }
 
 #loader1 {

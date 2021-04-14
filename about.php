@@ -1,5 +1,5 @@
 <?php
-
+// Initialize session
 session_start();
 ?>
 
@@ -20,14 +20,14 @@ session_start();
       <a class="active" href="index.php"><label class="logo"><img id="stockifylogo" src="images/stockify.png" alt="stockify" width="50" height="50"></label></a>
       <ul>
         <?php
-
+        // Change website layout depending on session status
         if(isset($_SESSION['loggedin-status'])){
             echo "<li><a href='index.php'>Home</a></li>
                   <li><a class='active' href='about.php'>About</a></li>
                   <li><a href='list.php'>Companies</a></li>
                   <li><a href='portfolio.php'>Portfolio</a></li>
                   <li><a href='profile.php'>Profile</a></li>
-                  <li><a href='favorites.php'>Favourites</a></li>
+                  <li><a href='favorites.php'>Favorites</a></li>
                   <li>
                   <form method='post'>
                   <button id='hamburgerLogout' type='hidden' name='logout' value='Logout'>Logout</button>
@@ -39,7 +39,7 @@ session_start();
                   <li><a href='list.php'>Companies</a></li>
                   <li><a href='login.php'>Login</a></li>";
         }
-
+        // End the session and clears the session variables
         if (isset($_POST['logout'])){
             $_SESSION = array();
             session_destroy();
@@ -52,15 +52,13 @@ session_start();
 
     <h1>About</h1>
     <section class="mainSection">
-
-
     <div class='content'><span class='label'>Class name: </span>COMP 3512 - Web II</div>
     <div class='content'><span class='label'>University: </span>Mount Royal University</div>
     <div class='content'><span class='label'>Professor: </span>Randy Connolly</div>
     <div class='content'><span class='label'>Semester: </span>Winter 2021</div>
     </br>
     <div class='content'>
-      <span class='label'>Technologies used: </span><br/>
+      <span class='label'>Technologies used: </span><br/><br/>
       <p>GitHub, Heroku, MySQL, MySQL WorkBench</p><br/>
       <div class ='links'>
       Links:<br/>
@@ -69,8 +67,9 @@ session_start();
         <a class='link' href="https://www.codingnepalweb.com/2020/04/responsive-menu-bar-in-html-css.html">Navigation Bar Reference</a><br/>
         <a class='link' href="https://www.goldencoreex.com/images/xz_bg.png">Background Image</a><br/>
         <a class='link' href="https://www.itsolutionstuff.com/post/column-sorting-using-php-and-mysqlexample.html">Column Sort Reference</a><br/>
-        <a class='link' href="https://github.com/malaman/js-image-zoom">Zoom Image Reference</a><br/>
         <a class='link' href="http://clipart-library.com/clip-art/coming-soon-transparent-17.htm">"Coming Soon!" Image</a><br/>
+        <a class='link' href="https://www.youtube.com/watch?v=Q_TplfrQlE0&ab_channel=doctorcode">Filter Search Reference</a><br/>
+        
       </div>    
     </div>
     </br>
