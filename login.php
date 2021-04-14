@@ -76,6 +76,20 @@ require_once "db-classes.php";
       </div>
       <div>
       <button type="submit" id="login" value="submit" name="login">Login</button><br/><br/>
+          
+          <?php
+          
+           if($errorCheck == false && isset($_POST['login'])){
+                
+                
+                echo "<div>Error: Invalid Email and/or Password.</div>";
+                
+                
+            }
+          
+          
+          ?>
+          
       No account? <a href='registration.php' id='linkSignUp'>Click here to sign up</a><br/>
       </div>
       </form>
@@ -122,13 +136,7 @@ require_once "db-classes.php";
 
         }
                 $pdo = null;
-                if($errorCheck == false){
-                
-                
-                echo "<h2>Error: Invalid Email and/or Password.</h2>";
-                
-                
-            }
+               
                 }
         
                 
