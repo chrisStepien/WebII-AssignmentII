@@ -88,6 +88,12 @@ class HistoryDB {
     return $statement->fetchAll();
   }
 
+  public function getLatestForSymbol($symbol) {
+    $sql = self::$baseSQL . " WHERE symbol=? AND DATE(date)='2019-03-29'";
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+    return $statement->fetchAll();
+  }
+
 }
 
 class UserDB {
@@ -126,5 +132,33 @@ class PortfolioDB {
     return $statement->fetchAll();
   }
 
+  public function getAllForUser($uID) {
+    $sql = self::$baseSQL . " WHERE userId=?";
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($uID));
+    return $statement->fetchAll();
+  }
 
+}
+
+class PortfolioHistoryCompanyDB {
+  private static $baseSQL = "SELECT portfolio.symbol, portfolio.userId, portfolio.amount, companies.name
+  FROM portfolio
+  INNER JOIN companies ON portfolio.symbol = companies.symbol";
+
+
+  public function __construct($connection) {
+    $this->pdo = $connection;
+  }
+
+  public function getAll() {
+    $sql = self::$baseSQL;
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, null);
+    return $statement->fetchAll();
+  }
+
+  public function getAllForUser($uID) {
+    $sql = self::$baseSQL . " WHERE portfolio.userId=?";
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($uID));
+    return $statement->fetchAll();
+  }
 }
