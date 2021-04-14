@@ -6,7 +6,7 @@ session_start();
 require_once "config.php";
 require_once "db-classes.php";
 
-//Connection to database
+// Connection to database
 $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
 $gateway = new UserDB($conn);
 
