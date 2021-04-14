@@ -76,7 +76,6 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
       echo "<th class='PortHeader' id='shares'>Number of Shares</th>";
       echo "<th class='PortHeader' id='close'>Close Value</th>";
       echo "<th class='PortHeader' id='value'>Value of Shares</th>";
-      echo "<th class='PortHeader' id='total'>Total Portfolio Value</th>";
       echo "</tr>";
 
       // Fills portfolio with user specific information
@@ -111,7 +110,7 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
       }
 
       $pdo = null;
-      echo  "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>" . number_format($portfolioValue, 2, '.', ',') . "</td><td></td></tr>";
+      echo  "<tr><td></td><td></td><td></td><td></td><td></td><td>Total Portfolio Value: " . number_format($portfolioValue, 2, '.', ',') . "</td></tr>";
       echo "</table>";
       
       ?>
