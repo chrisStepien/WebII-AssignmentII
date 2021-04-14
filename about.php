@@ -1,4 +1,3 @@
-<!-- https://www.codingnepalweb.com/2020/04/responsive-menu-bar-in-html-css.html -->
 <?php
 
 session_start();
@@ -61,8 +60,18 @@ session_start();
     <div class='content'><span class='label'>Semester: </span>Winter 2021</div>
     </br>
     <div class='content'>
-      <span class='label'>Technologies used: </span>
-
+      <span class='label'>Technologies used: </span><br/>
+      <p>GitHub, Heroku, MySQL, MySQL WorkBench</p><br/>
+      <div class ='links'>
+      Links:<br/>
+        <a class='link' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">CSS Styles</a><br/>
+        <a class='link' href="https://loading.io/css/">CSS Loader</a><br/>
+        <a class='link' href="https://www.codingnepalweb.com/2020/04/responsive-menu-bar-in-html-css.html">Navigation Bar Reference</a><br/>
+        <a class='link' href="https://www.goldencoreex.com/images/xz_bg.png">Background Image</a><br/>
+        <a class='link' href="https://www.itsolutionstuff.com/post/column-sorting-using-php-and-mysqlexample.html">Column Sort Reference</a><br/>
+        <a class='link' href="https://github.com/malaman/js-image-zoom">Zoom Image Reference</a><br/>
+        <a class='link' href="http://clipart-library.com/clip-art/coming-soon-transparent-17.htm">"Coming Soon!" Image</a><br/>
+      </div>    
     </div>
     </br>
     <div class='content'>

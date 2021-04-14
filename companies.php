@@ -20,28 +20,21 @@ header("Access-Control-Allow-Origin: *");
 // first get 
 $gate = new CompanyDB($connection);
 
-
-
 if (isset($_GET['symbol'])) {
-   if (! empty($_GET['symbol']))
-      $results = $gate->findById($_GET['symbol']);  
+   if (!empty($_GET['symbol']))
+      $results = $gate->findById($_GET['symbol']);
    else
       $results = NULL;
-}
-else {      
-       
-   $results = $gate->getAll();
+} else {
 
+   $results = $gate->getAll();
 }
 
 // output the JSON for the retrieved data
 
 if (is_null($results))
-    echo getJsonErrorMessage();
+   echo getJsonErrorMessage();
 else
-    echo json_encode($results);
+   echo json_encode($results);
 
 $connection =  null;
-
-
-?>
