@@ -10,4 +10,5 @@ define('DBNAME', 'gij9z58lxmjho289');
 define('DBUSER', 'twd2rqzft470q0ao');
 define('DBPASS', 's4m39lo2a53rosll');
 define('DBCONNSTRING',"mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8mb4;");
+
 ?>
