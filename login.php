@@ -121,16 +121,11 @@ require_once "db-classes.php";
                 }
         
                 $pdo = null;
-            }
+            
                 catch (PDOException $e) {
                     die( $e->getMessage() );
                 }
 
-        
-
-
-
-
-
+}
     ?>
 
