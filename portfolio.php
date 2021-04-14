@@ -41,7 +41,7 @@ $phcdb = new PortfolioHistoryCompanyDB($conn);
                   <li><a href='list.php'>Companies</a></li>
                   <li><a class='active' href='portfolio.php'>Portfolio</a></li>
                   <li><a href='profile.php'>Profile</a></li>
-                  <li><a href='favorites.php'>Favourites</a></li>
+                  <li><a href='favorites.php'>Favorites</a></li>
                   <li>
                   <form method='post'>
                   <button id='hamburgerLogout' type='hidden' name='logout' value='Logout'>Logout</button>
