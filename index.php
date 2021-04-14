@@ -1,10 +1,9 @@
 <!-- https://www.codingnepalweb.com/2020/04/responsive-menu-bar-in-html-css.html -->
 <!-- https://www.goldencoreex.com/images/xz_bg.png -->
-
 <?php
-  session_start();
-?>
 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -36,12 +35,45 @@
         <form action="list.php">
           <input type="submit" class="homeButtons" id="homeCompanies" value="Companies" />
         </form>
-        <form action="login.php">
-          <input type="submit" class="homeButtons" id="homeLogin" value="Login" />
-        </form>
-        <form action="registration.php">
-          <input type="submit" class="homeButtons" id="homeSignUp" value="Sign Up" />
-        </form>
+            <?php 
+          
+          if(isset($_SESSION['loggedin-status'])){
+              
+              echo "<form action=portfolio.php>
+                    <input type=submit class=homeButtons id=homePortfolio value=Portfolio />
+                    </form>";
+              echo "<form action=favorites.php>
+                    <input type=submit class=homeButtons id=homeFavorites value=Favorites />
+                    </form>";
+              echo "<form action=profile.php>
+                    <input type=submit class=homeButtons id=homeProfile value=Profile />
+                    </form>";
+              echo "<form method=POST>
+                    <input type=submit class=homeButtons id=homeLogout value=Logout name=logout />
+                    </form>";
+              
+          }else{
+              
+              
+                echo "<form action=login.php>
+                    <input type=submit class=homeButtons id=homeLogin value=Login />
+                    </form>";
+                echo "<form action=registration.php>
+                    <input type=submit class=homeButtons id=homeSignUp value=SignUp />
+                    </form>";
+              
+          }
+          if (isset($_POST['logout'])){
+            
+              $_SESSION = array();
+              
+              session_destroy();
+              
+              header("Location: index.php");
+          }
+          
+          ?>
+        
       </div>
     </section>
   </body>

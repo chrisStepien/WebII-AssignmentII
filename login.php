@@ -6,24 +6,11 @@ session_start();
 require_once "config.php";
 require_once "db-classes.php";
 
-
   $conn = DatabaseHelper::createConnection(array(DBCONNSTRING,
   DBUSER, DBPASS));
   $gateway = new UserDB($conn);
-  $results = $gateway->getAllForEmail($_GET['email']);
 
-  if (isset($_POST['submit'] )){
-  $email = $_POST['email'];
-  $pass = $_POST['password'];
-
-   foreach($results as $row){
-
-   if($row['email'] == $email){
-
-    echo "hello";
-   }
-  }
-}
+ 
 
 ?>
 
@@ -52,7 +39,7 @@ require_once "db-classes.php";
     <h1>LOG IN</h1>
     <section class="mainSection">
       <div id="loginParentDiv">
-      <form method="POST" action="#">
+      <form method="POST" action="">
       <div>
         <!-- <label id="labelEmail">Email: </label> -->
         <input type="text" class="loginInfo" name="email" id="loginEmail" placeholder="Email address">
@@ -62,7 +49,7 @@ require_once "db-classes.php";
         <input type="password" class="loginInfo" name="password" id="loginPassword" placeholder="Password">
       </div>
       <div>
-      <button type="submit" id="login" value="submit" name="submit">Login</button><br/><br/>
+      <button type="submit" id="login" value="submit" name="login">Login</button><br/><br/>
       No account? <a href='registration.php' id='linkSignUp'>Click here to sign up</a><br/>
       </div>
       </form>
@@ -71,3 +58,47 @@ require_once "db-classes.php";
 
   </body>
 </html>
+ <?php 
+            
+       
+
+        if (isset($_POST['login'])){
+            
+            $email = $_POST['email'];
+            $pass = $_POST['password'];
+           
+            try {
+                $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "select * from users";
+                $result = $pdo->query($sql);
+                // loop through the data
+                while ($row = $result->fetch()) {
+
+        if($row['email'] == $email){
+        
+            if(password_verify($pass, $row['password'])){
+                
+               $_SESSION['loggedin-status'] = true;
+               $_SESSION['user-id'] = $row['id'];
+                header('Location: index.php');
+            }
+    
+    
+    
+        }
+    
+                }
+                $pdo = null;
+            }
+                catch (PDOException $e) {
+                    die( $e->getMessage() );
+                }
+            
+        }
+            
+        
+          
+        
+    
+    ?>
