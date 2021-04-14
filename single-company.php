@@ -81,7 +81,7 @@ $cdb = new CompanyDB($conn);
         echo "</br>";
         if (isset($_SESSION['loggedin-status'])) {
         echo "<form method='get' action='favorites.php'>
-                <button type='submit' id='addToFavouritesButton' name='fav' value='" . $row['symbol'] . "'>Add to Favourites</button>
+                <button type='submit' id='addToFavouritesButton' name='fav' value='" . $row['symbol'] . "'>Add to Favorites</button>
                   </form>";
                 }
         echo "<button type='button' id='stockHistoryButton' onclick=";

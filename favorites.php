@@ -108,7 +108,7 @@ $cdb = new CompanyDB($conn);
         header('Location: favorites.php');
       }
     } else {
-      echo "No Favourites yet!";
+      echo "No Favorites yet!";
     }
 
     if (isset($_GET['submit'])) {
